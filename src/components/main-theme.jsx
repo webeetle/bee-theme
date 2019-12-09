@@ -28,11 +28,18 @@ const dark = {
   textContrast: white[50]
 };
 
+const disabledButtonContained = {
+  backgroundColor: 'rgba(0, 0, 0, 0.12)',
+  boxShadow: 'none',
+  color: 'rgba(0, 0, 0, 0.26)'
+};
+
 export {
   danger,
   info,
   success,
   warning,
   dark,
-  drawerWidth
+  drawerWidth,
+  disabledButtonContained
 }

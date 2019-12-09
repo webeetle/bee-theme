@@ -1,12 +1,12 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { Button } from '@material-ui/core';
 import BeeButton from './BeeButton';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
-<Meta title="Button" component={Button} />
+<Meta title="Button" component={BeeButton} />
 
 # Buttons
 
-Button colors colors for the `Button` component:
+Button colors colors for the `BeeButton` component:
 
 <Preview>
   <Story name="Button">
@@ -38,18 +38,54 @@ Contained colors colors for the `Button` component:
   </Story>
 </Preview>
 
-Disabled buttons:
+Outline variant
+
+<Preview>
+  <Story name="Outline">
+<React.Fragment>
+  <BeeButton variant="outlined" color="primary">Primary</BeeButton>
+  <BeeButton variant="outlined" color="secondary">Secondary</BeeButton>
+  <BeeButton variant="outlined" color="danger">Danger</BeeButton>
+  <BeeButton variant="outlined" color="info">Info</BeeButton>
+  <BeeButton variant="outlined" color="success">Success</BeeButton>
+  <BeeButton variant="outlined" color="warning">Warning</BeeButton>
+  <BeeButton variant="outlined" color="dark">Dark</BeeButton>
+</React.Fragment>
+  </Story>
+</Preview>
+
+Button groups:
+
+<Preview>
+  <Story name="ButtonGroup">
+<React.Fragment>
+<ButtonGroup color="info" variant="contained" size="small" aria-label="small outlined button group">
+  <BeeButton>One</BeeButton>
+  <BeeButton>Two</BeeButton>
+  <BeeButton>Three</BeeButton>
+</ButtonGroup>
+</React.Fragment>
+  </Story>
+</Preview>
+
+
+Disabled `BeeButton`:
 
 <Preview>
   <Story name="Disabled">
 <React.Fragment>
-  <BeeButton disabled variant="contained" color="primary">Primary</BeeButton>
-  <BeeButton disabled variant="contained" color="secondary">Secondary</BeeButton>
-  <BeeButton disabled variant="contained" color="danger">Danger</BeeButton>
-  <BeeButton disabled variant="contained" color="info">Info</BeeButton>
-  <BeeButton disabled variant="contained" color="success">Success</BeeButton>
-  <BeeButton disabled variant="contained" color="warning">Warning</BeeButton>
-  <BeeButton disabled variant="contained" color="dark">Dark</BeeButton>
+  <BeeButton disabled variant="contained" color="primary">Button</BeeButton>
+</React.Fragment>
+  </Story>
+</Preview>
+
+Rounded variant:
+
+<Preview>
+  <Story name="Rounded">
+<React.Fragment>
+  <BeeButton variant="contained" rounded color="primary">Primary</BeeButton>
+  <BeeButton variant="outlined" rounded color="info">Secondary</BeeButton>
 </React.Fragment>
   </Story>
 </Preview>

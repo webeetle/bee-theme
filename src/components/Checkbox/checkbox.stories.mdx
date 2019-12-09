@@ -1,0 +1,44 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import BeeCheckbox from './BeeCheckbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+<Meta title="Checkbox" component={BeeCheckbox} />
+
+# Checkbox
+
+Let's define a story for our `BeeCheckbox` component:
+
+<Preview>
+  <Story name="Checkbox">
+    <React.Fragment>
+      <FormControlLabel
+        control={<BeeCheckbox color="primary" />}
+        label="Checkbox"
+      />
+      <FormControlLabel
+        control={<BeeCheckbox color="secondary" />}
+        label="Checkbox"
+      />
+      <FormControlLabel
+        control={<BeeCheckbox color="success" />}
+        label="Success Checkbox"
+      />
+      <FormControlLabel
+        control={<BeeCheckbox color="warning" />}
+        label="Warning Checkbox"
+      />
+      <FormControlLabel
+        control={<BeeCheckbox color="danger" />}
+        label="Danger Checkbox"
+      />
+      <FormControlLabel
+        control={<BeeCheckbox color="info" />}
+        label="Info Checkbox"
+      />
+      <FormControlLabel
+        control={<BeeCheckbox color="dark" />}
+        label="Dark Checkbox"
+      />
+    </React.Fragment>
+  </Story>
+</Preview>

@@ -3,7 +3,8 @@ import {
   info,
   success,
   warning,
-  dark
+  dark,
+  disabledButtonContained
 } from '../main-theme';
 import { fade, darken } from '@material-ui/core/styles';
 
@@ -19,7 +20,13 @@ const buttonStyle = theme => ({
     },
     '&.MuiButton-contained': {
       backgroundColor: danger.main,
-      color: danger.textContrast
+      color: danger.textContrast,
+      '&:hover': {
+        backgroundColor: darken(danger.main, .3)
+      },
+      '&.Mui-disabled': {
+        ...disabledButtonContained
+      }
     }
   },
   info: {
@@ -36,7 +43,16 @@ const buttonStyle = theme => ({
       color: info.textContrast,
       '&:hover': {
         backgroundColor: darken(info.main, .3)
+      },
+      '&.Mui-disabled': {
+        ...disabledButtonContained
       }
+    },
+    '&.MuiButton-outlined': {
+      borderColor: info.main
+    },
+    '&.MuiButtonGroup-groupedContained:not(:last-child)': {
+      borderRight: `1px solid ${darken(info.main, .3)}`
     }
   },
   success: {
@@ -50,7 +66,19 @@ const buttonStyle = theme => ({
     },
     '&.MuiButton-contained': {
       backgroundColor: success.main,
-      color: success.textContrast
+      color: success.textContrast,
+      '&:hover': {
+        backgroundColor: darken(success.main, .3)
+      },
+      '&.Mui-disabled': {
+        ...disabledButtonContained
+      }
+    },
+    '&.MuiButton-outlined': {
+      borderColor: success.main
+    },
+    '&.MuiButtonGroup-groupedContained:not(:last-child)': {
+      borderRight: `1px solid ${darken(success.main, .3)}`
     }
   },
   warning: {
@@ -64,7 +92,19 @@ const buttonStyle = theme => ({
     },
     '&.MuiButton-contained': {
       backgroundColor: warning.main,
-      color: warning.textContrast
+      color: warning.textContrast,
+      '&:hover': {
+        backgroundColor: darken(warning.main, .3)
+      },
+      '&.Mui-disabled': {
+        ...disabledButtonContained
+      }
+    },
+    '&.MuiButton-outlined': {
+      borderColor: warning.main
+    },
+    '&.MuiButtonGroup-groupedContained:not(:last-child)': {
+      borderRight: `1px solid ${darken(warning.main, .3)}`
     }
   },
   dark: {
@@ -78,8 +118,23 @@ const buttonStyle = theme => ({
     },
     '&.MuiButton-contained': {
       backgroundColor: dark.main,
-      color: dark.textContrast
+      color: dark.textContrast,
+      '&:hover': {
+        backgroundColor: darken(dark.main, .3)
+      },
+      '&.Mui-disabled': {
+        ...disabledButtonContained
+      }
+    },
+    '&.MuiButton-outlined': {
+      borderColor: dark.main
+    },
+    '&.MuiButtonGroup-groupedContained:not(:last-child)': {
+      borderRight: `1px solid ${darken(dark.main, .3)}`
     }
+  },
+  rounded: {
+    borderRadius: 50
   }
 });
 

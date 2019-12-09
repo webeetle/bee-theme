@@ -13,11 +13,13 @@ class BeeButton extends React.Component {
       color,
       children,
       className,
+      rounded,
       ...rest
     } = this.props
 
     const btnClasses = classNames({
       [classes.button]: true,
+      [classes.rounded]: rounded,
       [classes[color]]: (color !== 'primary' && color !== 'secondary') ? color : null,
       [className]: className
     })
@@ -46,7 +48,8 @@ BeeButton.propTypes = {
     'warning',
     'danger',
     'dark'
-  ])
+  ]),
+  rounded: PropTypes.bool
 }
 
 export default withStyles(buttonStyle)(BeeButton)
