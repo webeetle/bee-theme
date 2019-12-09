@@ -1,0 +1,55 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Button } from '@material-ui/core';
+import BeeButton from './BeeButton';
+
+<Meta title="Button" component={Button} />
+
+# Buttons
+
+Button colors colors for the `Button` component:
+
+<Preview>
+  <Story name="Button">
+<React.Fragment>
+  <BeeButton color="primary">Primary</BeeButton>
+  <BeeButton color="secondary">Secondary</BeeButton>
+  <BeeButton color="danger">Danger</BeeButton>
+  <BeeButton color="info">Info</BeeButton>
+  <BeeButton color="success">Success</BeeButton>
+  <BeeButton color="warning">Warning</BeeButton>
+  <BeeButton color="dark">Dark</BeeButton>
+</React.Fragment>
+  </Story>
+</Preview>
+
+Contained colors colors for the `Button` component:
+
+<Preview>
+  <Story name="Contained">
+<React.Fragment>
+  <BeeButton variant="contained" color="primary">Primary</BeeButton>
+  <BeeButton variant="contained" color="secondary">Secondary</BeeButton>
+  <BeeButton variant="contained" color="danger">Danger</BeeButton>
+  <BeeButton variant="contained" color="info">Info</BeeButton>
+  <BeeButton variant="contained" color="success">Success</BeeButton>
+  <BeeButton variant="contained" color="warning">Warning</BeeButton>
+  <BeeButton variant="contained" color="dark">Dark</BeeButton>
+</React.Fragment>
+  </Story>
+</Preview>
+
+Disabled buttons:
+
+<Preview>
+  <Story name="Disabled">
+<React.Fragment>
+  <BeeButton disabled variant="contained" color="primary">Primary</BeeButton>
+  <BeeButton disabled variant="contained" color="secondary">Secondary</BeeButton>
+  <BeeButton disabled variant="contained" color="danger">Danger</BeeButton>
+  <BeeButton disabled variant="contained" color="info">Info</BeeButton>
+  <BeeButton disabled variant="contained" color="success">Success</BeeButton>
+  <BeeButton disabled variant="contained" color="warning">Warning</BeeButton>
+  <BeeButton disabled variant="contained" color="dark">Dark</BeeButton>
+</React.Fragment>
+  </Story>
+</Preview>
