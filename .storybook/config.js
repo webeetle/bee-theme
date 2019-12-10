@@ -16,5 +16,12 @@ addParameters({
 // automatically import all files ending in *.stories.js
 configure(require.context('../src/components', true, /\.stories\.mdx$/), module);
 
-const decorator = storyFn => <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>;
+const decorator = storyFn => <ThemeProvider theme={theme}>
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  }}>{storyFn()}</div>
+</ThemeProvider>;
 addDecorator(decorator);

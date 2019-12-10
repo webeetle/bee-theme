@@ -18,6 +18,9 @@ const buttonStyle = theme => ({
         backgroundColor: 'transparent',
       }
     },
+    '&.MuiButton-outlined': {
+      borderColor: danger.main
+    },
     '&.MuiButton-contained': {
       backgroundColor: danger.main,
       color: danger.textContrast,

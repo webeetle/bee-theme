@@ -1,0 +1,150 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import BeeChip from './BeeChip';
+import { Avatar } from '@material-ui/core';
+
+<Meta title="Chip" component={BeeChip} />
+
+# Chip
+
+Chip colors for the `BeeChip` component:
+
+<Preview>
+  <Story name="BeeChip">
+<React.Fragment>
+  <BeeChip 
+    color="primary"
+    label={'Primary'}
+  />
+  <BeeChip 
+    color="secondary"
+    label={'Secondary'}
+  />
+  <BeeChip 
+    color="danger"
+    label={'Danger'}
+  />
+  <BeeChip 
+    color="info"
+    label={'Info'}
+  />
+  <BeeChip 
+    color="success"
+    label={'Success'}
+  />
+  <BeeChip 
+    color="warning"
+    label={'Warning'}
+  />
+  <BeeChip 
+    color="dark"
+    label={'Dark'}
+  />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="BeeChip disabled">
+<React.Fragment>
+  <BeeChip 
+    disabled
+    color="primary"
+    label={'Primary'}
+  />
+  <BeeChip 
+    disabled
+    color="secondary"
+    label={'Secondary'}
+  />
+  <BeeChip 
+    disabled
+    color="danger"
+    label={'Danger'}
+  />
+  <BeeChip 
+    disabled
+    color="info"
+    label={'Info'}
+  />
+  <BeeChip 
+    disabled
+    color="success"
+    label={'Success'}
+  />
+  <BeeChip
+    disabled 
+    color="warning"
+    label={'Warning'}
+  />
+  <BeeChip 
+    disabled
+    color="dark"
+    label={'Dark'}
+  />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="BeeChip Avatar">
+<React.Fragment>
+  <BeeChip 
+    color='danger'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onClick={_ => alert('clicked')} />
+  <BeeChip 
+    color='info'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onClick={_ => alert('clicked')} />
+  <BeeChip 
+    color='success'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onClick={_ => alert('clicked')} />
+  <BeeChip 
+    color='warning'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onClick={_ => alert('clicked')} />
+  <BeeChip 
+    color='dark'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onClick={_ => alert('clicked')} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="BeeChip Deletable">
+<React.Fragment>
+  <BeeChip 
+    color='danger'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onDelete={_ => alert('clicked')} />
+  <BeeChip 
+    color='info'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onDelete={_ => alert('clicked')} />
+  <BeeChip 
+    color='success'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onDelete={_ => alert('clicked')} />
+  <BeeChip 
+    color='warning'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onDelete={_ => alert('clicked')} />
+  <BeeChip 
+    color='dark'
+    avatar={<Avatar>M</Avatar>} 
+    label="Clickable" 
+    onDelete={_ => alert('clicked')} />
+</React.Fragment>
+  </Story>
+</Preview>
