@@ -58,5 +58,5 @@ const config = {
 };
 
 const theme = createMuiTheme(config);
-
+console.log(theme);
 export default theme;

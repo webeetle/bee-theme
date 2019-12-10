@@ -1,0 +1,197 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import BeeDropdown from "./BeeDropdown";
+
+<Meta title="Dropdown" component={BeeDropdown} />
+
+# Dropdown
+
+Let's define a story for our `BeeDropdown` component:
+
+<Preview>
+  <Story name="Primary">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='primary'
+          buttonText={'Primary'}
+          buttonProps={{
+            color: 'primary'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Secondary">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='secondary'
+          buttonText={'Secondary'}
+          buttonProps={{
+            color: 'secondary'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Info">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='info'
+          buttonText={'Info'}
+          buttonProps={{
+            color: 'info'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Success">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='success'
+          buttonText={'Success'}
+          buttonProps={{
+            color: 'success'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Warning">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='warning'
+          buttonText={'Warning'}
+          buttonProps={{
+            color: 'warning'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Danger">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='danger'
+          buttonText={'Danger'}
+          buttonProps={{
+            color: 'danger'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Dark">
+    <React.Fragment>
+      <div style={{minHeight: 110}}>
+        <BeeDropdown
+          left
+          hoverColor='dark'
+          buttonText={'Dark'}
+          buttonProps={{
+            color: 'dark'
+          }}
+          dropdownList={[
+            {
+              label: 'Profilo',
+              onClick: _ => alert("Profilo")
+            },
+            {
+              label: 'Logout',
+              onClick: _ => alert("Logout")
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>

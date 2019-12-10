@@ -4,6 +4,7 @@ import green from '@material-ui/core/colors/green';
 import orange from '@material-ui/core/colors/orange';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import white from '@material-ui/core/colors/grey';
+import { hexToRgba } from './styles/utils';
 
 const drawerWidth = 256;
 
@@ -29,10 +30,35 @@ const dark = {
 };
 
 const disabledButtonContained = {
-  backgroundColor: 'rgba(0, 0, 0, 0.12)',
+  backgroundColor: 'rgba(0, 0, 0, .12)',
   boxShadow: 'none',
-  color: 'rgba(0, 0, 0, 0.26)'
+  color: 'rgba(0, 0, 0, .26)'
 };
+
+const infoBoxShadow = {
+  boxShadow:
+    `0 12px 20px -10px ${hexToRgba(info.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(info.main, .2)}`
+}
+
+const successBoxShadow = {
+  boxShadow:
+    `0 12px 20px -10px ${hexToRgba(success.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(success.main, .2)}`
+}
+
+const warningBoxShadow = {
+  boxShadow:
+    `0 12px 20px -10px ${hexToRgba(warning.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(warning.main, .2)}`
+}
+
+const dangerBoxShadow = {
+  boxShadow:
+    `0 12px 20px -10px ${hexToRgba(danger.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(danger.main, .2)}`
+}
+
+const darkBoxShadow = {
+  boxShadow:
+    '0 12px 20px -10px rgba(244, 67, 54, .28), 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px rgba(244, 67, 54, .2)'
+}
 
 export {
   danger,
@@ -41,5 +67,10 @@ export {
   warning,
   dark,
   drawerWidth,
+  infoBoxShadow,
+  successBoxShadow,
+  warningBoxShadow,
+  dangerBoxShadow,
+  darkBoxShadow,
   disabledButtonContained
 }

@@ -1,0 +1,72 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import BeeHeader from './BeeHeader';
+
+<Meta title="Header" component={BeeHeader} />
+
+# Headers
+
+Let's define a story for our `Header` component:
+
+<Preview>
+  <Story name="Primary Header">
+<React.Fragment>
+  <BeeHeader color='primary' brand={`Primary`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Secondary Header">
+<React.Fragment>
+  <BeeHeader color='secondary' brand={`Secondary`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="White Header">
+<React.Fragment>
+  <BeeHeader color='white' brand={`White`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Info Header">
+<React.Fragment>
+  <BeeHeader color='info' brand={`Info`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Danger Header">
+<React.Fragment>
+  <BeeHeader color='danger' brand={`Danger`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Warning Header">
+<React.Fragment>
+  <BeeHeader color='warning' brand={`Warning`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Success Header">
+<React.Fragment>
+  <BeeHeader color='success' brand={`Success`} />
+</React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Dark Header">
+<React.Fragment>
+  <BeeHeader color='dark' brand={`Dark`} />
+</React.Fragment>
+  </Story>
+</Preview>

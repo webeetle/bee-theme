@@ -1,0 +1,151 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Card from './BeeCard';
+import CardHeader from './BeeCardHeader';
+import CardBody from './BeeCardBody';
+import CardFooter from './BeeCardFooter';
+
+<Meta title="Card" component={Card} />
+
+# Card
+
+Let's define a story for our `Card` component:
+
+<Preview>
+  <Story name="Card Primary">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'primary'}>
+          This is a primary title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Card Secondary">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'secondary'}>
+          This is a secondary title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Card Info">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'info'}>
+          This is an info title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Card Danger">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'danger'}>
+          This is a danger title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Card Success">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'success'}>
+          This is a success title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Card Warning">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'warning'}>
+          This is a warning title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Card Dark">
+    <React.Fragment>
+      <Card>
+        <CardHeader color={'dark'}>
+          This is a dark title
+        </CardHeader>
+        <CardBody>
+          <Typography>
+            This is the body
+          </Typography>
+        </CardBody>
+        <CardFooter>
+          This is the footer
+        </CardFooter>
+      </Card>
+    </React.Fragment>
+  </Story>
+</Preview>
