@@ -53,11 +53,10 @@ const config = {
     }
   },
   shape: {
-    borderRadius: 5
+    borderRadius: 3
   }
 };
 
 const theme = createMuiTheme(config);
 
 export default theme;
-export { config };
