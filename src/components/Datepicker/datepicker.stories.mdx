@@ -1,0 +1,37 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from '@date-io/date-fns';
+
+<Meta title="Datepicker" component={DatePicker} />
+
+# DatePicker
+
+Let's define a story for our `DatePicker` component:
+
+<Preview>
+  <Story name="Basic Usage">
+    <React.Fragment>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <DatePicker
+          label="Basic example"
+          animateYearScrolling
+        />
+      </MuiPickersUtilsProvider>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Clearable">
+    <React.Fragment>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <DatePicker
+          autoOk
+          label="Clearable"
+          clearable
+          disableFuture
+        />
+      </MuiPickersUtilsProvider>
+    </React.Fragment>
+  </Story>
+</Preview>
