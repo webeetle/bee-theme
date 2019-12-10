@@ -1,6 +1,6 @@
 {
   "name": "@davidedantonio/fw-theme",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Material UI custom components",
   "author": "Davide D'Antonio <davide.dantonio@webeetle.com>",
   "main": "./core/index.js",
