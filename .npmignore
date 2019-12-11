@@ -3,4 +3,6 @@ public
 build
 .storybook
 .babelrc
+.storybook-static
+.github
 .node_modules
