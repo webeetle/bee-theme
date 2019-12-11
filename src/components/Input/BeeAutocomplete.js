@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import deburr from 'lodash/deburr';
-import Downshift from 'downshift';
-import {withStyles} from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import MenuItem from '@material-ui/core/MenuItem';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import deburr from 'lodash/deburr'
+import Downshift from 'downshift'
+import { withStyles } from '@material-ui/core/styles'
+import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
+import MenuItem from '@material-ui/core/MenuItem'
 
 const styles = theme => ({
   root: {
@@ -13,7 +13,7 @@ const styles = theme => ({
   },
   container: {
     flexGrow: 1,
-    position: 'relative',
+    position: 'relative'
   },
   paper: {
     position: 'absolute',
@@ -22,26 +22,26 @@ const styles = theme => ({
     left: 0,
     right: 0,
     maxHeight: 250,
-    overflowY:'auto',
+    overflowY: 'auto'
   },
   chip: {
-    margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`,
+    margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`
   },
   inputRoot: {
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   inputInput: {
     width: 'auto',
-    flexGrow: 1,
+    flexGrow: 1
   },
   divider: {
-    height: theme.spacing.unit * 2,
-  },
-});
+    height: theme.spacing.unit * 2
+  }
+})
 
 /* Input */
 const renderInput = (inputProps) => {
-  const {InputProps, classes, ref, variant, error, helperText, selectedItem, clearSelection, ...other} = inputProps;
+  const { InputProps, classes, ref, variant, error, helperText, selectedItem, clearSelection, ...other } = inputProps
 
   return (
     <TextField
@@ -50,22 +50,22 @@ const renderInput = (inputProps) => {
         inputRef: ref,
         classes: {
           root: classes.inputRoot,
-          input: classes.inputInput,
+          input: classes.inputInput
         },
-        ...InputProps,
+        ...InputProps
       }}
       error={error}
       helperText={helperText}
       {...other}
     />
-  );
-};
+  )
+}
 /* End */
 
 /* Option */
-const renderOption = ({suggestion, index, itemProps, highlightedIndex, selectedItem}) => {
-  const isHighlighted = highlightedIndex === index;
-  const isSelected = (selectedItem || '').indexOf(suggestion.label) > -1;
+const renderOption = ({ suggestion, index, itemProps, highlightedIndex, selectedItem }) => {
+  const isHighlighted = highlightedIndex === index
+  const isSelected = (selectedItem || '').indexOf(suggestion.label) > -1
 
   return (
     <MenuItem
@@ -74,21 +74,21 @@ const renderOption = ({suggestion, index, itemProps, highlightedIndex, selectedI
       selected={isHighlighted}
       component="div"
       style={{
-        fontWeight: isSelected ? 500 : 400,
+        fontWeight: isSelected ? 500 : 400
       }}
     >
       {suggestion.label}
     </MenuItem>
-  );
-};
+  )
+}
 
 renderOption.propTypes = {
   highlightedIndex: PropTypes.number,
   index: PropTypes.number,
   itemProps: PropTypes.object,
   selectedItem: PropTypes.string,
-  suggestion: PropTypes.shape({label: PropTypes.string}).isRequired,
-};
+  suggestion: PropTypes.shape({ label: PropTypes.string }).isRequired
+}
 
 /* End */
 
@@ -100,7 +100,7 @@ class BeeAutocomplete extends Component {
     variant: PropTypes.string,
     rowsData: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.string,
-      label: PropTypes.string,
+      label: PropTypes.string
     })),
     onChange: PropTypes.func,
     onInputValueChange: PropTypes.func,
@@ -108,41 +108,42 @@ class BeeAutocomplete extends Component {
     remote: PropTypes.bool,
     helperText: PropTypes.string,
     error: PropTypes.bool,
+    disabled: PropTypes.bool,
+    value: PropTypes.any
   };
 
   searchLocal = (value, rowsData) => {
-    const inputValue = deburr(value.trim()).toLowerCase();
-    const inputLength = inputValue.length;
-    let count = 0;
+    const inputValue = deburr(value.trim()).toLowerCase()
+    const inputLength = inputValue.length
+    let count = 0
 
     if (inputLength !== 0 && (rowsData && rowsData.length > 0)) {
       return rowsData.filter(suggestion => {
         const keep =
-          count < 5 && suggestion.label.slice(0, inputLength).toLowerCase() === inputValue;
+          count < 5 && suggestion.label.slice(0, inputLength).toLowerCase() === inputValue
 
         if (keep) {
-          count += 1;
+          count += 1
         }
 
-        return keep;
+        return keep
       })
     };
 
-    return [];
+    return []
   }
 
   getOptions = (value) => {
-    const {rowsData, remote} = this.props;
-    if(!remote){
-      return this.searchLocal(value, remote);
-    }
-    else{
-      return rowsData;
+    const { rowsData, remote } = this.props
+    if (!remote) {
+      return this.searchLocal(value, remote)
+    } else {
+      return rowsData
     }
   };
 
-  render() {
-    const {classes, label, placeholder, variant, onChange, onStateChange, onInputValueChange, value, error, helperText, disabled} = this.props;
+  render () {
+    const { classes, label, placeholder, variant, onChange, onStateChange, onInputValueChange, value, error, helperText, disabled } = this.props
 
     return (
       <div className={classes.root}>
@@ -154,15 +155,14 @@ class BeeAutocomplete extends Component {
           initialInputValue={value}
         >
           {({
-              getInputProps,
-              getItemProps,
-              getMenuProps,
-              highlightedIndex,
-              inputValue,
-              isOpen,
-              selectedItem,
-            }) => {
-
+            getInputProps,
+            getItemProps,
+            getMenuProps,
+            highlightedIndex,
+            inputValue,
+            isOpen,
+            selectedItem
+          }) => {
             return (
               <div className={classes.container}>
                 {renderInput({
@@ -170,13 +170,13 @@ class BeeAutocomplete extends Component {
                   classes,
                   variant,
                   InputProps: getInputProps({
-                    placeholder: placeholder,
+                    placeholder: placeholder
                   }),
                   label: label,
                   error: error,
                   helperText: helperText,
                   disabled: disabled,
-                  selectedItem,
+                  selectedItem
                 })}
                 <div {...getMenuProps()}>
                   {isOpen ? (
@@ -186,10 +186,10 @@ class BeeAutocomplete extends Component {
                           renderOption({
                             suggestion,
                             index,
-                            itemProps: getItemProps({item: suggestion.value}),
+                            itemProps: getItemProps({ item: suggestion.value }),
                             highlightedIndex,
-                            selectedItem,
-                          }),
+                            selectedItem
+                          })
                         )
                       }
                     </Paper>
@@ -205,7 +205,7 @@ class BeeAutocomplete extends Component {
 }
 
 BeeAutocomplete.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+  classes: PropTypes.object.isRequired
+}
 
-export default withStyles(styles)(BeeAutocomplete);
+export default withStyles(styles)(BeeAutocomplete)

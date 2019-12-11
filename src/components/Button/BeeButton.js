@@ -27,7 +27,7 @@ class BeeButton extends React.Component {
     if (color === 'primary' || color === 'secondary') {
       Object.assign(rest, {
         color: color
-      });
+      })
     }
 
     return (
@@ -40,6 +40,8 @@ class BeeButton extends React.Component {
 
 BeeButton.propTypes = {
   classes: PropTypes.object.isRequired,
+  children: PropTypes.node,
+  className: PropTypes.string,
   color: PropTypes.oneOf([
     'primary',
     'secondary',

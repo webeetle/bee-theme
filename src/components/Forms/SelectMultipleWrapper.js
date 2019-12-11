@@ -5,22 +5,24 @@ import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
-import Input from '@material-ui/core/Input';
-import Checkbox from '@material-ui/core/Checkbox';
-import ListItemText from '@material-ui/core/ListItemText';
-import Chip from '@material-ui/core/Chip';
+import Input from '@material-ui/core/Input'
+import Checkbox from '@material-ui/core/Checkbox'
+import ListItemText from '@material-ui/core/ListItemText'
+import Chip from '@material-ui/core/Chip'
+import PropTypes from 'prop-types'
 
-export default ({
-  input: { name, value, onChange },
-  native,
-  multiple,
-  fullWidth,
-  variant,
-  rowsData,
-  meta,
-  disabled = false,
-  ...propsInputWrapped
-}) => {
+const SelectMultipleWrapper = (props) => {
+  const {
+    input: { name, value, onChange },
+    native,
+    multiple,
+    fullWidth,
+    variant,
+    rowsData,
+    meta,
+    disabled = false,
+    ...propsInputWrapped
+  } = props
 
   const renderOption = (rowData, native = false) => {
     if (native) {
@@ -38,10 +40,10 @@ export default ({
   }
 
   const renderSelectedOption = (value, label, native) => {
-    if (value && value !== "") {
+    if (value && value !== '') {
       return renderOption({
         value: value,
-        label: label,
+        label: label
       }, native)
     }
 
@@ -49,9 +51,9 @@ export default ({
   }
 
   const ownProps = () => {
-    let otherProps = {}
+    const otherProps = {}
 
-    if (variant === "outlined") {
+    if (variant === 'outlined') {
       otherProps.input = (
         <OutlinedInput
           fullWidth
@@ -67,7 +69,7 @@ export default ({
     <FormControl variant={variant} fullWidth={fullWidth} error={meta.error && meta.touched}>
       {propsInputWrapped.placeholder ? (<InputLabel> {propsInputWrapped.placeholder} </InputLabel>) : null}
       <Select
-        value={(value) ? value : []}
+        value={(value) || []}
         multiple={multiple}
         native={native}
         name={name}
@@ -100,3 +102,16 @@ export default ({
     </FormControl>
   )
 }
+
+SelectMultipleWrapper.propTypes = {
+  input: PropTypes.object,
+  meta: PropTypes.object,
+  rowsData: PropTypes.array,
+  multiple: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  disabled: PropTypes.bool,
+  variant: PropTypes.string,
+  native: PropTypes.bool
+}
+
+export default SelectMultipleWrapper

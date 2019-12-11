@@ -1,14 +1,15 @@
-import React from "react";
-import { DatePicker } from "@material-ui/pickers";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { DatePicker } from '@material-ui/pickers'
 
 const DatePickerWrapper = (props) => {
   const {
     input: { name, onChange, value, ...restInput },
     meta,
     ...rest
-  } = props;
+  } = props
 
-  const showError = ((meta.submitError && !meta.dirtySinceLastSubmit) || meta.error) && meta.touched;
+  const showError = ((meta.submitError && !meta.dirtySinceLastSubmit) || meta.error) && meta.touched
 
   return (
     <DatePicker
@@ -18,10 +19,15 @@ const DatePickerWrapper = (props) => {
       error={showError}
       inputProps={restInput}
       onChange={onChange}
-      format={"dd-MM-Y"}
-      value={value === "" ? null : value}
+      format={'dd-MM-Y'}
+      value={value === '' ? null : value}
     />
-  );
+  )
 }
 
-export default DatePickerWrapper;
+DatePickerWrapper.propTypes = {
+  input: PropTypes.object,
+  meta: PropTypes.object
+}
+
+export default DatePickerWrapper

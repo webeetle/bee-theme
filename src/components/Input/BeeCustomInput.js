@@ -91,6 +91,6 @@ BeeCustomInput.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool,
   white: PropTypes.bool
-};
+}
 
-export default withStyles(customInputStyle)(BeeCustomInput);
+export default withStyles(customInputStyle)(BeeCustomInput)
