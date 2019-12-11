@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          token: ${{ secrets.g_token }}
+          repository: webeetle/bee-theme
+          ref: gh-pages
+          token: ${{secrets.g_token}}
       - uses: actions/setup-node@v1
         with:
           node-version: 12
