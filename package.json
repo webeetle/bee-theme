@@ -31,7 +31,7 @@
   },
   "scripts": {
     "test": "echo \"OK\"",
-    "build": "rm -R ./core && ./node_modules/.bin/babel ./src --out-dir ./core --source-maps --copy-files",
+    "build": "npm run lint && rm -Rf ./core && ./node_modules/.bin/babel ./src --out-dir ./core --source-maps --copy-files",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint ./src",
