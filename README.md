@@ -2,7 +2,7 @@
 
 ## Installation
 
-```javascript
+```bash
 npm i @webeetle/bee-theme -s
 ```
 
