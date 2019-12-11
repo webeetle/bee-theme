@@ -1,9 +1,10 @@
 {
-  "name": "@webeetle/fw-theme",
-  "version": "0.1.4",
-  "description": "Material UI custom components",
-  "author": "Davide D'Antonio <davide.dantonio@webeetle.com>",
+  "name": "@webeetle/bee-theme",
+  "version": "0.1.5",
+  "description": "Webeetle Material UI Kit",
+  "author": "Webeetle <info@webeetle.com>",
   "main": "./core/index.js",
+  "repository": "https://github.com/webeetle/bee-theme",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
     "@devexpress/dx-core": "^2.3.1",
@@ -28,15 +29,14 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
+    "test": "echo \"OK\"",
     "build": "rm -R ./core && ./node_modules/.bin/babel ./src --out-dir ./core --source-maps --copy-files",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src"
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -71,5 +71,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1"
+    "@storybook/storybook-deployer": "^2.8.1",
   }
 }
