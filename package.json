@@ -35,7 +35,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint ./src",
-    "lint:fix": "eslint --fix ./src"
+    "lint:fix": "eslint --fix ./src",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
