@@ -32,8 +32,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "clean": "rm -R ./core",
-    "build": "./node_modules/.bin/babel ./src --out-dir ./core --source-maps --copy-files",
+    "build": "rm -R ./core && ./node_modules/.bin/babel ./src --out-dir ./core --source-maps --copy-files",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
