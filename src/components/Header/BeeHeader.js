@@ -11,7 +11,7 @@ import Menu from '@material-ui/icons/Menu'
 import HeaderStyle from './BeeHeaderStyle'
 
 class BeeHeader extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       mobileOpen: false
@@ -19,13 +19,13 @@ class BeeHeader extends React.Component {
     this.headerColorChange = this.headerColorChange.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.changeColorOnScroll) {
       window.addEventListener('scroll', this.headerColorChange)
     }
   }
 
-  headerColorChange() {
+  headerColorChange () {
     const { classes, color, changeColorOnScroll } = this.props
     const windowsScrollTop = window.pageYOffset
     if (windowsScrollTop > changeColorOnScroll.height) {
@@ -45,13 +45,13 @@ class BeeHeader extends React.Component {
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     if (this.props.changeColorOnScroll) {
       window.removeEventListener('scroll', this.headerColorChange)
     }
   }
 
-  render() {
+  render () {
     const {
       classes,
       color,
@@ -95,8 +95,8 @@ class BeeHeader extends React.Component {
                 {leftLinks}
               </Hidden>
             ) : (
-                brandComponent
-              )}
+              brandComponent
+            )}
           </div>
           {rightLinks}
         </Toolbar>

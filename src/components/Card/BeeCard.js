@@ -1,8 +1,8 @@
-import React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
-import cardStyle from './BeeCardStyle';
+import React from 'react'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import withStyles from '@material-ui/core/styles/withStyles'
+import cardStyle from './BeeCardStyle'
 
 class BeeCard extends React.Component {
   render () {
@@ -25,8 +25,9 @@ class BeeCard extends React.Component {
 BeeCard.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
+  children: PropTypes.node,
   plain: PropTypes.bool,
   carousel: PropTypes.bool
-};
+}
 
-export default withStyles(cardStyle)(BeeCard);
+export default withStyles(cardStyle)(BeeCard)

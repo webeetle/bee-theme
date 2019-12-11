@@ -1,5 +1,5 @@
 {
-  "name": "@davidedantonio/fw-theme",
+  "name": "@webeetle/fw-theme",
   "version": "0.1.4",
   "description": "Material UI custom components",
   "author": "Davide D'Antonio <davide.dantonio@webeetle.com>",
@@ -34,7 +34,9 @@
   "scripts": {
     "build": "rm -R ./core && ./node_modules/.bin/babel ./src --out-dir ./core --source-maps --copy-files",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,6 +63,13 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

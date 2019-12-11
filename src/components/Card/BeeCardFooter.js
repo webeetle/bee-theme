@@ -1,8 +1,8 @@
-import React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
-import cardFooterStyle from './BeeCardFooterStyle';
+import React from 'react'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import withStyles from '@material-ui/core/styles/withStyles'
+import cardFooterStyle from './BeeCardFooterStyle'
 
 class BeeCardFooter extends React.Component {
   render () {
@@ -23,7 +23,8 @@ class BeeCardFooter extends React.Component {
 
 BeeCardFooter.propTypes = {
   classes: PropTypes.object.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  children: PropTypes.node
 }
 
 export default withStyles(cardFooterStyle)(BeeCardFooter)

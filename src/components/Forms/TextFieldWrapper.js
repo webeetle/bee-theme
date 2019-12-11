@@ -1,29 +1,33 @@
-import React from "react";
-import TextField from "@material-ui/core/TextField";
+import React from 'react'
+import TextField from '@material-ui/core/TextField'
+import PropTypes from 'prop-types'
 
-export default ({
-  input: { name, onChange, onBlur, value },
-  meta,
-  fullWidth,
-  readOnly = false,
-  variant,
-  disabled = false,
-  type = "text",
-  highlighted = false,
-  InputProps = {},
-  onClick,
-  disableUnderline = false,
-  rowsMax,
-  multiline,
-  rows,
-  uppercase = false,
-  ...propsInputWrapped
-}) => {
-  if (type === "hidden") {
-    delete meta.error;
+const TextFieldWrapper = (props) => {
+  const {
+    input: { name, onChange, onBlur, value },
+    meta,
+    fullWidth,
+    readOnly = false,
+    variant,
+    disabled = false,
+    type = 'text',
+    highlighted = false,
+    InputProps = {},
+    onClick,
+    disableUnderline = false,
+    rowsMax,
+    multiline,
+    rows,
+    uppercase = false,
+    ...propsInputWrapped
+  } = props
+
+  if (type === 'hidden') {
+    delete meta.error
   }
+  let tempValue = null
   if (uppercase) {
-    value = typeof value === "string" ? value.toUpperCase() : value;
+    tempValue = typeof value === 'string' ? value.toUpperCase() : value
   }
 
   return (
@@ -33,23 +37,23 @@ export default ({
       name={name}
       helperText={meta.touched ? meta.error : undefined}
       error={(meta.error && meta.touched) || highlighted}
-      value={value}
+      value={tempValue}
       fullWidth={fullWidth}
       variant={variant}
       onChange={(...params) => {
         if (onChange) {
-          onChange(...params);
+          onChange(...params)
         }
         if (propsInputWrapped.onChange) {
-          propsInputWrapped.onChange(...params);
+          propsInputWrapped.onChange(...params)
         }
       }}
       onBlur={(...params) => {
         if (onBlur) {
-          onBlur(...params);
+          onBlur(...params)
         }
         if (propsInputWrapped.onBlur) {
-          propsInputWrapped.onBlur(...params);
+          propsInputWrapped.onBlur(...params)
         }
       }}
       disabled={disabled}
@@ -64,5 +68,25 @@ export default ({
       }}
       onClick={onClick}
     />
-  );
-};
+  )
+}
+
+TextFieldWrapper.propTypes = {
+  input: PropTypes.object,
+  meta: PropTypes.object,
+  onClick: PropTypes.func,
+  rowsMax: PropTypes.number,
+  readOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
+  type: PropTypes.string,
+  disableUnderline: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  variant: PropTypes.string,
+  rows: PropTypes.array,
+  uppercase: PropTypes.bool,
+  InputProps: PropTypes.object,
+  highlighted: PropTypes.bool,
+  multiline: PropTypes.bool
+}
+
+export default TextFieldWrapper

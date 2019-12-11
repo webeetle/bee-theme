@@ -1,5 +1,5 @@
-import React from 'react';
-import Autocomplete from '../Input/BeeAutocomplete';
+import React from 'react'
+import Autocomplete from '../Input/BeeAutocomplete'
 
 export default ({
   onStateChange,
@@ -17,7 +17,7 @@ export default ({
   const renderAutocompleteWithoutValue = () => {
     return (
       <Autocomplete
-        key={"autocomplete_without_value"}
+        key={'autocomplete_without_value'}
         name={name}
         variant={variant}
         label={label}
@@ -39,13 +39,13 @@ export default ({
         error={meta.error && meta.touched}
         disabled={disabled}
       />
-    );
-  };
+    )
+  }
 
   const renderAutocompleteWithValue = () => {
     return (
       <Autocomplete
-        key={"autocomplete_with_value"}
+        key={'autocomplete_with_value'}
         name={name}
         variant={variant}
         label={label}
@@ -67,8 +67,8 @@ export default ({
         error={meta.error && meta.touched}
         disabled={disabled}
       />
-    );
-  };
+    )
+  }
 
-  return (value ? renderAutocompleteWithValue() : renderAutocompleteWithoutValue());
+  return (value ? renderAutocompleteWithValue() : renderAutocompleteWithoutValue())
 }

@@ -1,25 +1,24 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import React from 'react'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Paper from "@material-ui/core/Paper";
-import Grow from "@material-ui/core/Grow";
-import Divider from "@material-ui/core/Divider";
-import Icon from "@material-ui/core/Icon";
-import Popper from "@material-ui/core/Popper";
+import withStyles from '@material-ui/core/styles/withStyles'
+import MenuItem from '@material-ui/core/MenuItem'
+import MenuList from '@material-ui/core/MenuList'
+import ClickAwayListener from '@material-ui/core/ClickAwayListener'
+import Paper from '@material-ui/core/Paper'
+import Grow from '@material-ui/core/Grow'
+import Divider from '@material-ui/core/Divider'
+import Icon from '@material-ui/core/Icon'
+import Popper from '@material-ui/core/Popper'
 
 // core components
-import Button from "../Button/BeeButton";
-import BeeDropdownStyle from "./BeeDropdownStyle";
+import Button from '../Button/BeeButton'
+import BeeDropdownStyle from './BeeDropdownStyle'
 
 class BeeDropdown extends React.Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       open: false
@@ -28,25 +27,25 @@ class BeeDropdown extends React.Component {
     this.handleClose = this.handleClose.bind(this)
   }
 
-  handleClick() {
+  handleClick () {
     this.setState(state => ({ open: !state.open }))
   }
 
-  handleClose(param) {
+  handleClose (param) {
     this.setState({ open: false })
-    if(this.props && this.props.onClick){
+    if (this.props && this.props.onClick) {
       this.props.onClick(param)
     }
   }
 
-  handleCloseAway = event => {
+  handleCloseAway (event) {
     if (this.anchorEl.contains(event.target)) {
       return
     }
     this.setState({ open: false })
   }
 
-  render() {
+  render () {
     const { open } = this.state
     const {
       classes,
@@ -71,17 +70,17 @@ class BeeDropdown extends React.Component {
 
     const dropdownItem = classNames({
       [classes.dropdownItem]: true,
-      [classes[hoverColor + "Hover"]]: true,
+      [classes[hoverColor + 'Hover']]: true,
       [classes.noLiPadding]: noLiPadding,
       [classes.dropdownItemRTL]: rtlActive
     })
 
     let icon = null
     switch (typeof buttonIcon) {
-      case "function":
+      case 'function':
         icon = <this.props.buttonIcon className={classes.buttonIcon} />
         break
-      case "string":
+      case 'string':
         icon = (
           <Icon className={classes.buttonIcon}>{this.props.buttonIcon}</Icon>
         )
@@ -95,7 +94,7 @@ class BeeDropdown extends React.Component {
         <div>
           <Button
             aria-label="Notifications"
-            aria-owns={open ? "menu-list" : null}
+            aria-owns={open ? 'menu-list' : null}
             aria-haspopup="true"
             {...buttonProps}
             buttonRef={node => {
@@ -115,8 +114,8 @@ class BeeDropdown extends React.Component {
           disablePortal
           placement={
             dropup
-              ? left ? "top-start" : "top"
-              : left ? "bottom-start" : "bottom"
+              ? left ? 'top-start' : 'top'
+              : left ? 'bottom-start' : 'bottom'
           }
           className={classNames({
             [classes.popperClose]: !open,
@@ -129,8 +128,8 @@ class BeeDropdown extends React.Component {
               id="menu-list"
               style={
                 dropup
-                  ? { transformOrigin: "0 100% 0" }
-                  : { transformOrigin: "0 0 0" }
+                  ? { transformOrigin: '0 100% 0' }
+                  : { transformOrigin: '0 0 0' }
               }
             >
               <Paper className={classes.dropdown}>
@@ -158,7 +157,7 @@ class BeeDropdown extends React.Component {
                         <MenuItem
                           key={key}
                           onClick={() => {
-                            if(prop.onClick){
+                            if (prop.onClick) {
                               prop.onClick()
                             }
 
@@ -183,19 +182,19 @@ class BeeDropdown extends React.Component {
 
 BeeDropdown.defaultProps = {
   caret: true,
-  hoverColor: "primary"
-};
+  hoverColor: 'primary'
+}
 
 BeeDropdown.propTypes = {
   classes: PropTypes.object.isRequired,
   hoverColor: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "dark"
+    'primary',
+    'secondary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'dark'
   ]),
   buttonText: PropTypes.node,
   buttonIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
@@ -208,6 +207,6 @@ BeeDropdown.propTypes = {
   left: PropTypes.bool,
   noLiPadding: PropTypes.bool,
   onClick: PropTypes.func
-};
+}
 
-export default withStyles(BeeDropdownStyle)(BeeDropdown);
+export default withStyles(BeeDropdownStyle)(BeeDropdown)

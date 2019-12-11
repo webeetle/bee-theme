@@ -1,14 +1,14 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
-import withStyles from "@material-ui/core/styles/withStyles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import HeaderStyle from "./BeeHeaderStyle";
-import Typography from "@material-ui/core/Typography";
+import React from 'react'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import withStyles from '@material-ui/core/styles/withStyles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import HeaderStyle from './BeeHeaderStyle'
+import Typography from '@material-ui/core/Typography'
 
 class BeeSimpleHeader extends React.Component {
-  render() {
+  render () {
     const {
       classes,
       color,
@@ -40,37 +40,40 @@ class BeeSimpleHeader extends React.Component {
 }
 
 BeeSimpleHeader.defaultProp = {
-  color: "primary",
+  color: 'primary',
   elevation: 1
 }
 
 BeeSimpleHeader.propTypes = {
+  brand: PropTypes.string,
+  elevation: PropTypes.number,
   classes: PropTypes.object.isRequired,
+  children: PropTypes.node,
   color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "transparent",
-    "white",
-    "rose",
-    "dark"
+    'primary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'transparent',
+    'white',
+    'rose',
+    'dark'
   ]),
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
   changeColorOnScroll: PropTypes.shape({
     height: PropTypes.number.isRequired,
     color: PropTypes.oneOf([
-      "primary",
-      "info",
-      "success",
-      "warning",
-      "danger",
-      "transparent",
-      "white",
-      "rose",
-      "dark"
+      'primary',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'transparent',
+      'white',
+      'rose',
+      'dark'
     ]).isRequired
   })
 }
