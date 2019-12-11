@@ -10,8 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          repository: webeetle/bee-theme
-          ref: gh-pages
           token: ${{secrets.g_token}}
       - uses: actions/setup-node@v1
         with:
@@ -19,7 +17,9 @@ jobs:
       - run: |
           npm i
           npm test
-          npm run deploy-storybook
+          npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{secrets.g_token}}
 
   publish-npm:
     needs: build
