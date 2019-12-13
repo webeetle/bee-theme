@@ -66,3 +66,5 @@ CheckboxWrapper.propTypes = {
     color: PropTypes.string,
     onChange: PropTypes.func,
 }
+
+export default CheckboxWrapper;
