@@ -6,7 +6,10 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import white from '@material-ui/core/colors/grey';
 import { hexToRgba } from './styles/utils';
 
-const drawerWidth = 256;
+const drawerWidth = 240;
+const drawerWidthCollapsed = 55;
+
+const headerHeight = 50;
 
 const danger = {
   main: red[500],
@@ -67,6 +70,8 @@ export {
   warning,
   dark,
   drawerWidth,
+  drawerWidthCollapsed,
+  headerHeight,
   infoBoxShadow,
   successBoxShadow,
   warningBoxShadow,

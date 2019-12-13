@@ -5,7 +5,6 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
-import Button from '@material-ui/core/Button'
 import Hidden from '@material-ui/core/Hidden'
 import Menu from '@material-ui/icons/Menu'
 import HeaderStyle from './BeeHeaderStyle'
@@ -67,7 +66,8 @@ class BeeHeader extends React.Component {
       [classes.appBar]: true,
       [classes[color]]: color,
       [classes.absolute]: absolute,
-      [classes.fixed]: fixed
+      [classes.fixed]: fixed,
+      'BeeHeader-root': true
     })
 
     let iconBar = (<IconButton
@@ -82,12 +82,11 @@ class BeeHeader extends React.Component {
       iconBar = null
     }
 
-    const brandComponent = <Button className={classes.title}>{brand}</Button>
     return (
       <AppBar className={appBarClasses} elevation={2}>
         <Toolbar className={classes.container}>
           {iconBar}
-          {leftLinks !== undefined ? brandComponent : null}
+          {leftLinks !== undefined ? brand : null}
 
           <div className={classes.flex}>
             {leftLinks !== undefined ? (
@@ -95,7 +94,7 @@ class BeeHeader extends React.Component {
                 {leftLinks}
               </Hidden>
             ) : (
-              brandComponent
+              brand
             )}
           </div>
           {rightLinks}

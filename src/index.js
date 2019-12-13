@@ -22,6 +22,7 @@ export { default as BeeHeader } from './components/Header/BeeHeader'
 export { default as BeeSimpleHeader } from './components/Header/BeeSimpleHeader'
 export { default as BeeAutocomplete } from './components/Input/BeeAutocomplete'
 export { default as BeeInput } from './components/Input/BeeCustomInput'
+export { default as BeeDrawer } from './components/Drawer/BeeDrawer'
 export { formatPrice as BeeFormatPrice } from './components/Input/BeeFormatters'
 
 const config = {
