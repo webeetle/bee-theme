@@ -17,8 +17,7 @@ addParameters({
 addDecorator((story, context) => withInfo('usage')(story)(context))
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../src/components', true, /\.stories\.mdx$/), module);
-configure(require.context('../src/components', true, /\.stories\.jsx$/), module);
+configure(require.context('../src/components', true, /\.stories(?:\.mdx|\.jsx)$/), module);
 
 const decorator = storyFn => <ThemeProvider theme={theme}>
   <div style={{
