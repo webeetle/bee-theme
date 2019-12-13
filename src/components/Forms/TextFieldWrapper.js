@@ -1,92 +1,82 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField'
-import PropTypes from 'prop-types'
+import TextField from '@material-ui/core/TextField';
 
-const TextFieldWrapper = (props) => {
-  const {
-    input: { name, onChange, onBlur, value },
-    meta,
-    fullWidth,
-    readOnly = false,
-    variant,
-    disabled = false,
-    type = 'text',
-    highlighted = false,
-    InputProps = {},
-    onClick,
-    disableUnderline = false,
-    rowsMax,
-    multiline,
-    rows,
-    uppercase = false,
-    ...propsInputWrapped
-  } = props
+export default ({
+                  input: {name, onChange, onBlur, value, ...propsInput},
+                  meta,
+                  fullWidth,
+                  readOnly = false,
+                  variant,
+                  disabled = false,
+                  type = "text",
+                  highlighted = false,
+                  InputProps = {},
+                  onClick,
+                  disableUnderline = false,
+                  label,
+                  placeholder,
+                  rowsMax,
+                  multiline,
+                  rows,
+                  uppercase = false,
+                  hidden = false,
+                  id,
+                  ...propsField
+                }) => {
 
-  if (type === 'hidden') {
-    delete meta.error
-  }
-  let tempValue = null
-  if (uppercase) {
-    tempValue = typeof value === 'string' ? value.toUpperCase() : value
+  if (type === "hidden") {
+    delete meta.error;
   }
 
   return (
-    <TextField
-      type={type}
-      label={propsInputWrapped.placeholder}
-      name={name}
-      helperText={meta.touched ? meta.error : undefined}
-      error={(meta.error && meta.touched) || highlighted}
-      value={tempValue}
-      fullWidth={fullWidth}
-      variant={variant}
-      onChange={(...params) => {
-        if (onChange) {
-          onChange(...params)
-        }
-        if (propsInputWrapped.onChange) {
-          propsInputWrapped.onChange(...params)
-        }
-      }}
-      onBlur={(...params) => {
-        if (onBlur) {
-          onBlur(...params)
-        }
-        if (propsInputWrapped.onBlur) {
-          propsInputWrapped.onBlur(...params)
-        }
-      }}
-      disabled={disabled}
-      rows={rows}
-      rowsMax={rowsMax}
-      multiline={multiline}
-      InputProps={{
-        ...InputProps,
-        readOnly,
-        disableUnderline: disableUnderline,
-        type: type
-      }}
-      onClick={onClick}
-    />
+      hidden ? null : (
+          <TextField
+              id={id}
+              type={type}
+              label={label}
+              placeholder={placeholder}
+              name={name}
+              helperText={meta.touched ? meta.error : undefined}
+              error={(meta.error && meta.touched) || highlighted}
+              value={propsField.value ? propsField.value : value}
+              fullWidth={fullWidth}
+              variant={variant}
+              onChange={(...params) => {
+                if (uppercase) {
+                  params[0].target.value = params[0].target.value.toUpperCase();
+                }
+
+                if (onChange) {
+                  onChange(...params)
+                }
+                if (propsField.onChange) {
+                  propsField.onChange(...params)
+                }
+              }}
+              onBlur={(...params) => {
+                if (onBlur) {
+                  onBlur(...params)
+                }
+                if (propsField.onBlur) {
+                  propsField.onBlur(...params)
+                }
+              }}
+              disabled={disabled}
+              rows={rows}
+              rowsMax={rowsMax}
+              multiline={multiline}
+              inputProps={{
+                ...propsInput
+              }}
+              InputProps={{
+                ...InputProps,
+                className: multiline ? "textarea-default" : (InputProps ? InputProps.className : ''),
+                readOnly,
+                disableUnderline: disableUnderline,
+                type: type,
+              }}
+              onClick={!disabled ? onClick : () => {}}
+          />
+      )
   )
 }
-
-TextFieldWrapper.propTypes = {
-  input: PropTypes.object,
-  meta: PropTypes.object,
-  onClick: PropTypes.func,
-  rowsMax: PropTypes.number,
-  readOnly: PropTypes.bool,
-  disabled: PropTypes.bool,
-  type: PropTypes.string,
-  disableUnderline: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  variant: PropTypes.string,
-  rows: PropTypes.array,
-  uppercase: PropTypes.bool,
-  InputProps: PropTypes.object,
-  highlighted: PropTypes.bool,
-  multiline: PropTypes.bool
-}
-
-export default TextFieldWrapper
