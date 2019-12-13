@@ -2,6 +2,7 @@ import React from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles({
     root: {
@@ -17,15 +18,15 @@ const useStyles = makeStyles({
     }
 });
 
-export default ({
+const CheckboxWrapper = (props) => {
+    const {
         input: {name, onChange, value, checked},
         meta,
         label,
         disabled,
         labelPlacement,
         color = 'primary',
-        ...propsField
-    }) => {
+    } = props;
 
     const classes = useStyles({
         hasError: meta.error && meta.touched,
@@ -39,8 +40,8 @@ export default ({
                 if(onChange){
                     onChange(...params)
                 }
-                if(propsField.onChange){
-                    propsField.onChange(...params)
+                if(props.onChange){
+                    props.onChange(...params)
                 }
             }}
             value={value}
@@ -55,3 +56,13 @@ export default ({
         />
     );
 };
+
+CheckboxWrapper.propTypes = {
+    input: PropTypes.object,
+    meta: PropTypes.object,
+    fullWidth: PropTypes.bool,
+    disabled: PropTypes.bool,
+    labelPlacement: PropTypes.string,
+    color: PropTypes.string,
+    onChange: PropTypes.func,
+}
