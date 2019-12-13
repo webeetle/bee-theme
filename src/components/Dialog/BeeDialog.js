@@ -36,7 +36,7 @@ function MyDialog(props) {
 			
 			<DialogTitle style={onClose ? {paddingLeft: '0px'} : null}>
 				{onClose ?
-					<IconButton style={{color: 'white'}} onClick={onClose}>
+					<IconButton onClick={onClose}>
 						<CloseIcon/>
 					</IconButton>
 					: null}
@@ -57,7 +57,7 @@ function MyDialog(props) {
 class BeeDialog extends Component {
 	static propTypes = {
 		open: PropTypes.bool.isRequired,
-		title: PropTypes.string.isRequired,
+		title: PropTypes.string,
 		toolbarBtns: PropTypes.arrayOf(PropTypes.node),
 		maxWidth: PropTypes.oneOf([
 			'xs',
