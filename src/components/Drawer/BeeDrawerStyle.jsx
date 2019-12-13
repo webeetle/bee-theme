@@ -107,7 +107,7 @@ const DrawerStyle = theme => ({
 
   drawerHead:{
     boxSizing:'border-box',
-    padding: 16,
+    padding: theme.spacing(2),
   },
 
   drawerBody:{
