@@ -1,5 +1,7 @@
 # Webeetle Material UI Kit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/webeetle/bee-theme.svg)](https://greenkeeper.io/)
+
 ## Installation
 
 ```bash
