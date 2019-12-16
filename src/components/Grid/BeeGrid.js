@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import withStyles from '@material-ui/core/styles/withStyles'
 import { CircularProgress, Paper } from '@material-ui/core'
-import BeeGridStyle from './BeeGridStyle'
 import classNames from 'classnames'
 import {
   SearchState,
@@ -84,6 +82,7 @@ BeeGrid.propTypes = {
   columns: PropTypes.array,
   loading: PropTypes.bool,
   search: PropTypes.object,
+  toolbar: PropTypes.any,
   selection: PropTypes.object,
   sorting: PropTypes.object,
   paging: PropTypes.object,
@@ -91,4 +90,4 @@ BeeGrid.propTypes = {
   className: PropTypes.string
 }
 
-export default withStyles(BeeGridStyle)(BeeGrid)
+export default BeeGrid

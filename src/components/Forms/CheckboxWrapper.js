@@ -58,6 +58,7 @@ const CheckboxWrapper = (props) => {
 }
 
 CheckboxWrapper.propTypes = {
+  label: PropTypes.string,
   input: PropTypes.object,
   meta: PropTypes.object,
   fullWidth: PropTypes.bool,

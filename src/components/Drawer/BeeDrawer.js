@@ -53,6 +53,8 @@ class BeeDrawer extends React.Component {
 BeeDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
+  header: PropTypes.node,
+  body: PropTypes.node,
   collapsed: PropTypes.bool.isRequired,
   color: PropTypes.oneOf([
     'primary',

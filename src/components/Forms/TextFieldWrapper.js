@@ -1,7 +1,8 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
+import PropTypes from 'prop-types'
 
-export default ({
+const TextFieldWrapper = ({
   input: { name, onChange, onBlur, value, ...propsInput },
   meta,
   fullWidth,
@@ -79,3 +80,27 @@ export default ({
     )
   )
 }
+
+TextFieldWrapper.propTypes = {
+  id: PropTypes.string,
+  uppercase: PropTypes.bool,
+  hidden: PropTypes.bool,
+  rows: PropTypes.array,
+  input: PropTypes.object,
+  meta: PropTypes.object,
+  readOnly: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  disabled: PropTypes.bool,
+  type: PropTypes.string,
+  highlighted: PropTypes.bool,
+  InputProps: PropTypes.object,
+  onClick: PropTypes.func,
+  disableUnderline: PropTypes.bool,
+  multiline: PropTypes.bool,
+  variant: PropTypes.string,
+  placeholder: PropTypes.string,
+  rowsMax: PropTypes.number,
+  label: PropTypes.string
+}
+
+export default TextFieldWrapper

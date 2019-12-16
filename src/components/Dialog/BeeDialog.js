@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
@@ -21,7 +21,7 @@ function PaperComponent (props) {
   )
 }
 
-function MyDialog (props) {
+function BeeDialog (props) {
   const { open, title, toolbarBtns, maxWidth, children, styleContent, onClose, draggable, disableBackdropClick, disableEscapeKeyDown } = props
 
   return (
@@ -54,10 +54,18 @@ function MyDialog (props) {
   )
 }
 
-class BeeDialog extends Component {
-  render () {
-    return <MyDialog {...this.props} />
-  }
+BeeDialog.propTypes = {
+  open: PropTypes.bool.isRequired,
+  title: PropTypes.any,
+  toolbarBtns: PropTypes.node,
+  maxWidth: PropTypes.number,
+  children: PropTypes.node,
+  styleContent: PropTypes.object,
+  onClose: PropTypes.func,
+  draggable: PropTypes.bool,
+  disableBackdropClick: PropTypes.bool,
+  disableEscapeKeyDown: PropTypes.bool,
+  className: PropTypes.string
 }
 
 export default BeeDialog

@@ -8,9 +8,12 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 const ITEM_HEIGHT = 48
 
 class BeeMenuMore extends React.Component {
-  state = {
-    anchorEl: null
-  };
+  constructor (props) {
+    super(props)
+    this.state = {
+      anchorEl: null
+    }
+  }
 
   handleClick (event) {
     this.setState({ anchorEl: event.currentTarget })
@@ -19,16 +22,20 @@ class BeeMenuMore extends React.Component {
   handleClose (event, onClickProp, id, extraParams) {
     this.setState({ anchorEl: null })
 
-    if (typeof onClickProp !== 'function') { return }
+    if (typeof onClickProp !== 'function') {
+      return
+    }
 
-    if (onClickProp) { onClickProp(id, extraParams) }
+    if (onClickProp) {
+      onClickProp(id, extraParams)
+    }
   }
 
   render () {
     const { anchorEl } = this.state
     const { configuration, icon } = this.props
 
-    let actionIcon = (<MoreVertIcon />)
+    let actionIcon = (<MoreVertIcon/>)
     if (icon) {
       actionIcon = icon
     }
@@ -39,11 +46,12 @@ class BeeMenuMore extends React.Component {
       configuration.forEach((item, key) => {
         if (!item.hidden) {
           menuElements.push((
-            <MenuItem style={{ fontSize: '15px' }} key={'menu-ud-' + key} onClick={(e) => this.handleClose(e, item.onClick, this.props.id, this.props.extraParams)} >
+            <MenuItem style={{ fontSize: '15px' }} key={'menu-ud-' + key}
+              onClick={(e) => this.handleClose(e, item.onClick, this.props.id, this.props.extraParams)}>
               <div style={{ marginRight: '15px', display: 'flex' }}>
                 {item.icon}
               </div>
-              <div >
+              <div>
                 {item.label}
               </div>
             </MenuItem>

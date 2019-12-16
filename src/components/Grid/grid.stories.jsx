@@ -17,10 +17,19 @@ export const Standard = () => {
     {name: "Nunzia", gender: "Female", city: "Nocera Inferiore", car: "BMW Serie 1"}
   ]);
   return (
-    <BeeGrid
-      columns={columns}
-      rows={rows}
-    />
+    <div>
+      <Typography variant={"h5"}>Default Grid</Typography>
+      <BeeGrid
+        columns={columns}
+        rows={rows}
+      />
+      <Typography variant={"h5"} style={{marginTop: 30}}>Loading Grid</Typography>
+      <BeeGrid
+        columns={columns}
+        rows={[]}
+        loading={true}
+      />
+    </div>
   )
 }
 
@@ -199,9 +208,13 @@ export const Paging = () => {
         rows={rows}
         paging={{
           currentPage: 1,
-          onCurrentPageChange: (page) => {console.log(page)},
+          onCurrentPageChange: (page) => {
+            console.log(page)
+          },
           pageSize: 5,
-          onPageSizeChange: (pageSize) => {console.log(pageSize)},
+          onPageSizeChange: (pageSize) => {
+            console.log(pageSize)
+          },
           pageSizes: pageSizes,
           totalCount: 13
         }}

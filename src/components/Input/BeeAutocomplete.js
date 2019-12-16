@@ -93,26 +93,7 @@ renderOption.propTypes = {
 /* End */
 
 class BeeAutocomplete extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    label: PropTypes.string,
-    placeholder: PropTypes.string,
-    variant: PropTypes.string,
-    rowsData: PropTypes.arrayOf(PropTypes.shape({
-      value: PropTypes.string,
-      label: PropTypes.string
-    })),
-    onChange: PropTypes.func,
-    onInputValueChange: PropTypes.func,
-    onStateChange: PropTypes.func,
-    remote: PropTypes.bool,
-    helperText: PropTypes.string,
-    error: PropTypes.bool,
-    disabled: PropTypes.bool,
-    value: PropTypes.any
-  };
-
-  searchLocal = (value, rowsData) => {
+  searchLocal (value, rowsData) {
     const inputValue = deburr(value.trim()).toLowerCase()
     const inputLength = inputValue.length
     let count = 0
@@ -128,19 +109,18 @@ class BeeAutocomplete extends Component {
 
         return keep
       })
-    };
-
+    }
     return []
   }
 
-  getOptions = (value) => {
+  getOptions (value) {
     const { rowsData, remote } = this.props
     if (!remote) {
       return this.searchLocal(value, remote)
     } else {
       return rowsData
     }
-  };
+  }
 
   render () {
     const { classes, label, placeholder, variant, onChange, onStateChange, onInputValueChange, value, error, helperText, disabled } = this.props
@@ -205,6 +185,22 @@ class BeeAutocomplete extends Component {
 }
 
 BeeAutocomplete.propTypes = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  variant: PropTypes.string,
+  rowsData: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string,
+    label: PropTypes.string
+  })),
+  onChange: PropTypes.func,
+  onInputValueChange: PropTypes.func,
+  onStateChange: PropTypes.func,
+  remote: PropTypes.bool,
+  helperText: PropTypes.string,
+  error: PropTypes.bool,
+  disabled: PropTypes.bool,
+  value: PropTypes.any,
   classes: PropTypes.object.isRequired
 }
 
