@@ -124,7 +124,7 @@ BeeHeader.propTypes = {
   ]),
   rightLinks: PropTypes.node,
   leftLinks: PropTypes.node,
-  brand: PropTypes.string,
+  brand: PropTypes.any,
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
   changeColorOnScroll: PropTypes.shape({
