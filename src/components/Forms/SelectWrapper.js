@@ -52,7 +52,7 @@ const SelectWrapper = (props) => {
       otherProps.input = (
         <OutlinedInput
           fullWidth
-          labelWidth={propsInputWrapped.placeholder.length * 9.5}
+          labelWidth={propsInputWrapped.label.length * 9.5}
         />
       )
     }
@@ -62,7 +62,7 @@ const SelectWrapper = (props) => {
 
   return (
     <FormControl variant={variant} fullWidth={fullWidth} error={meta.error && meta.touched}>
-      {propsInputWrapped.placeholder ? (<InputLabel> {propsInputWrapped.placeholder} </InputLabel>) : null}
+      {propsInputWrapped.label ? (<InputLabel> {propsInputWrapped.label} </InputLabel>) : null}
       <Select
         value={value}
         native={native}
@@ -98,7 +98,8 @@ SelectWrapper.propTypes = {
   disabled: PropTypes.bool,
   variant: PropTypes.string,
   native: PropTypes.bool,
-  render: PropTypes.any
+  render: PropTypes.any,
+  label: PropTypes.string,
 }
 
 export default SelectWrapper
