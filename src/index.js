@@ -16,14 +16,13 @@ export { default as BeeSelectMultipleWrapper } from './components/Forms/SelectMu
 export { default as BeeSelectWrapper } from './components/Forms/SelectWrapper'
 export { default as BeeSwitchWrapper } from './components/Forms/SwitchWrapper'
 export { default as BeeTextFieldWrapper } from './components/Forms/TextFieldWrapper'
-export { default as BeeGridContainer } from './components/Grid/BeeGridContainer'
-export { default as BeeGridItem } from './components/Grid/BeeGridItem'
 export { default as BeeHeader } from './components/Header/BeeHeader'
 export { default as BeeSimpleHeader } from './components/Header/BeeSimpleHeader'
 export { default as BeeAutocomplete } from './components/Input/BeeAutocomplete'
 export { default as BeeInput } from './components/Input/BeeCustomInput'
 export { default as BeeDrawer } from './components/Drawer/BeeDrawer'
 export { default as BeeDialog } from './components/Dialog/BeeDialog'
+export { default as BeeGrid } from './components/Grid/BeeGrid'
 export { formatPrice as BeeFormatPrice } from './components/Input/BeeFormatters'
 
 const config = {
@@ -80,7 +79,9 @@ const config = {
   },
   shape: {
     borderRadius: 3
-  }
+  },
+  drawerWidth: 240,
+  drawerWidthCollapsed: 55
 }
 
 const theme = createMuiTheme(config)
