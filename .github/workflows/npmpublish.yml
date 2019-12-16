@@ -17,10 +17,6 @@ jobs:
       - run: |
           npm i
           npm test
-          npm run build-storybook -- -o out5132
-          npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN --existing-output-dir=.out5132
-        env:
-          GITHUB_TOKEN: ${{secrets.g_token}}
 
   publish-npm:
     needs: build
