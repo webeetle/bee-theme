@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
-import {Drawer} from '@material-ui/core'
-import DrawerStyle from "../Drawer/BeeDrawerStyle";
-import classNames from "classnames";
+import { Drawer } from '@material-ui/core'
+import DrawerStyle from '../Drawer/BeeDrawerStyle'
+import classNames from 'classnames'
 
 class BeeDrawer extends React.Component {
-
-  render() {
+  render () {
     const {
       classes,
       className,
@@ -23,19 +22,19 @@ class BeeDrawer extends React.Component {
       [classes.open]: !collapsed,
       [classes.collapsed]: collapsed,
       [classes[color]]: color,
-      "BeeDrawer-root": !collapsed,
-      "BeeDrawer-root-collapsed": collapsed,
+      'BeeDrawer-root': !collapsed,
+      'BeeDrawer-root-collapsed': collapsed,
       [className]: className
     })
 
     const drawerHeadClasses = classNames({
       [classes.drawerHead]: true,
-      "BeeDrawer-head": true,
+      'BeeDrawer-head': true
     })
 
     const drawerBodyClasses = classNames({
       [classes.drawerBody]: true,
-      "BeeDrawer-body": true,
+      'BeeDrawer-body': true
     })
 
     return (
@@ -49,8 +48,6 @@ class BeeDrawer extends React.Component {
       </Drawer>
     )
   }
-
-
 }
 
 BeeDrawer.propTypes = {
@@ -70,7 +67,7 @@ BeeDrawer.propTypes = {
   variant: PropTypes.string,
   anchor: PropTypes.string,
   children: PropTypes.node,
-  className: PropTypes.string,
+  className: PropTypes.string
 }
 
 export default withStyles(DrawerStyle)(BeeDrawer)

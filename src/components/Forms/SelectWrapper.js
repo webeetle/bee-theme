@@ -99,7 +99,7 @@ SelectWrapper.propTypes = {
   variant: PropTypes.string,
   native: PropTypes.bool,
   render: PropTypes.any,
-  label: PropTypes.string,
+  label: PropTypes.string
 }
 
 export default SelectWrapper

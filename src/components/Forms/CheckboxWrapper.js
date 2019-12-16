@@ -1,12 +1,12 @@
 import React from 'react'
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from "prop-types";
+import Checkbox from '@material-ui/core/Checkbox'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import { makeStyles } from '@material-ui/core/styles'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({
   root: {
-    color: props => props.hasError ? 'red' : 'initial',
+    color: props => props.hasError ? 'red' : 'initial'
   },
   label: {
     color: props => props.hasError ? 'red' : 'initial'
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     marginLeft: 0
   }
-});
+})
 
 const CheckboxWrapper = (props) => {
   const {
@@ -25,13 +25,13 @@ const CheckboxWrapper = (props) => {
     label,
     disabled,
     labelPlacement,
-    color = 'primary',
-  } = props;
+    color = 'primary'
+  } = props
 
   const classes = useStyles({
     hasError: meta.error && meta.touched,
     labelPlacement
-  });
+  })
 
   return (
     <FormControlLabel
@@ -54,8 +54,8 @@ const CheckboxWrapper = (props) => {
       labelPlacement={labelPlacement}
       classes={classes}
     />
-  );
-};
+  )
+}
 
 CheckboxWrapper.propTypes = {
   input: PropTypes.object,
@@ -64,7 +64,7 @@ CheckboxWrapper.propTypes = {
   disabled: PropTypes.bool,
   labelPlacement: PropTypes.string,
   color: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func
 }
 
-export default CheckboxWrapper;
+export default CheckboxWrapper

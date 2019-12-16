@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
-import {CircularProgress, Paper} from '@material-ui/core';
-import BeeGridStyle from "./BeeGridStyle";
-import classNames from "classnames";
+import { CircularProgress, Paper } from '@material-ui/core'
+import BeeGridStyle from './BeeGridStyle'
+import classNames from 'classnames'
 import {
   SearchState,
   SelectionState,
@@ -11,7 +11,7 @@ import {
   IntegratedFiltering,
   IntegratedSelection,
   IntegratedSorting, PagingState, IntegratedPaging, CustomPaging
-} from '@devexpress/dx-react-grid';
+} from '@devexpress/dx-react-grid'
 import {
   Grid,
   Table,
@@ -20,11 +20,10 @@ import {
   TableSelection,
   TableHeaderRow,
   PagingPanel
-} from '@devexpress/dx-react-grid-material-ui';
+} from '@devexpress/dx-react-grid-material-ui'
 
 class BeeGrid extends React.Component {
-  render() {
-
+  render () {
     const {
       classes,
       className,
@@ -40,7 +39,7 @@ class BeeGrid extends React.Component {
     } = this.props
 
     const GridClasses = classNames({
-      "BeeGrid-root": true,
+      'BeeGrid-root': true,
       [className]: className
     })
 
@@ -89,7 +88,7 @@ BeeGrid.propTypes = {
   sorting: PropTypes.object,
   paging: PropTypes.object,
   children: PropTypes.node,
-  className: PropTypes.string,
+  className: PropTypes.string
 }
 
 export default withStyles(BeeGridStyle)(BeeGrid)
