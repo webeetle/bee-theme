@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CircularProgress, Paper } from '@material-ui/core'
+import {LinearProgress, Paper} from '@material-ui/core'
 import classNames from 'classnames'
 import {
   SearchState,
@@ -21,7 +21,7 @@ import {
 } from '@devexpress/dx-react-grid-material-ui'
 
 class BeeGrid extends React.Component {
-  render () {
+  render() {
     const {
       classes,
       className,
@@ -43,6 +43,9 @@ class BeeGrid extends React.Component {
 
     return (
       <Paper>
+
+        {loading && <LinearProgress/>}
+
         <Grid
           rows={rows}
           columns={columns}
@@ -70,7 +73,6 @@ class BeeGrid extends React.Component {
           {paging && <PagingPanel {...paging} />}
 
         </Grid>
-        {loading && <CircularProgress/>}
       </Paper>
     )
   }
