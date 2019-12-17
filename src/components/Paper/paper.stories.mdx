@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import BeePaper from './BeePaper'
+import { Typography } from '@material-ui/core'
+
+<Meta title="Paper" component={BeePaper} />
+
+# Paper
+
+Chip colors for the `BeePaper` component:
+
+<Preview>
+  <Story name="BeePaper">
+<React.Fragment>
+  <BeePaper>
+      <Typography variant="h5" component="h3">
+        This is a sheet of paper.
+      </Typography>
+      <Typography component="p">
+        Paper can be used to build surface or other elements for your application.
+      </Typography>
+    </BeePaper>
+</React.Fragment>
+  </Story>
+</Preview>
