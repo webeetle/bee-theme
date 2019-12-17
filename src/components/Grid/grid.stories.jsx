@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {storiesOf} from '@storybook/react';
 import BeeGrid from './BeeGrid';
-import {Typography, Paper, Divider} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 
 
 export const Standard = () => {
@@ -34,13 +34,13 @@ export const Standard = () => {
 }
 
 export const Search = () => {
-  const [columns, setColumns] = useState([
+  const [columns] = useState([
     {name: 'name', title: 'Name'},
     {name: 'gender', title: 'Gender'},
     {name: 'city', title: 'City'},
     {name: 'car', title: 'Car'},
   ]);
-  const [rows, setRows] = useState([
+  const [rows] = useState([
     {name: "Marco", gender: "Male", city: "Angri", car: "Hyundai 10"},
     {name: "Gennaro", gender: "Male", city: "Pagani", car: "Panda 2008"},
     {name: "Nunzia", gender: "Female", city: "Nocera Inferiore", car: "BMW Serie 1"}
@@ -120,7 +120,7 @@ export const Sorting = () => {
     {name: "Nunzia", gender: "Female", city: "Nocera Inferiore", car: "BMW Serie 1"}
   ]);
 
-  const [sorting, setSorting] = useState([{columnName: 'city', direction: 'asc'}]);
+  const [sorting] = useState([{columnName: 'city', direction: 'asc'}]);
 
 
   return (

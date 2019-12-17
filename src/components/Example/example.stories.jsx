@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
 import BeeDrawer from '../Drawer/BeeDrawer';
 import BeeHeader from "../Header/BeeHeader";
 import BeeButton from "../Button/BeeButton";
-import {ListItem, ListItemIcon, ListItemText, Typography, List, ListSubheader, Collapse} from "@material-ui/core";
-import {MoveToInbox, Send as SendIcon, ExpandLess, ExpandMore, StarBorder, Drafts as  DraftsIcon, Inbox as InboxIcon} from "@material-ui/icons";
+import {ListItem, ListItemIcon, ListItemText, Typography, List, Collapse} from "@material-ui/core";
+import {Send as SendIcon, ExpandLess, ExpandMore, StarBorder, Drafts as  DraftsIcon, Inbox as InboxIcon} from "@material-ui/icons";
 import {makeStyles} from '@material-ui/core/styles';
 import {drawerWidth, drawerWidthCollapsed} from "../main-theme";
 

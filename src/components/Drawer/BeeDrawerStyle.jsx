@@ -3,8 +3,6 @@ import {
   drawerWidth,
   drawerWidthCollapsed, info, success, warning
 } from "../main-theme";
-import {hexToRgba} from './../styles/utils';
-
 
 const DrawerStyle = theme => ({
   drawer: {

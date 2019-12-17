@@ -1,13 +1,9 @@
 import React, {useState} from 'react';
 import { storiesOf } from '@storybook/react';
-import {action} from '@storybook/addon-actions';
 import BeeDrawer from './BeeDrawer';
 import BeeButton from "../Button/BeeButton";
-import BeeHeader from "../Header/BeeHeader";
-import {ListItem, ListItemIcon, ListItemText, Typography} from "@material-ui/core";
+import {ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import {MoveToInbox} from "@material-ui/icons";
-import {makeStyles} from '@material-ui/core/styles';
-import {drawerWidth, drawerWidthCollapsed} from "../main-theme";
 
 
 export const Standard = () => {
