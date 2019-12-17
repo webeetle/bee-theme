@@ -5,4 +5,7 @@ build
 .babelrc
 .storybook-static
 .github
-.node_modules
+.editorconfig
+.eslintrc.json
+.travis.yml
+node_modules
