@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { LinearProgress, Paper } from '@material-ui/core'
+import { LinearProgress } from '@material-ui/core'
 import classNames from 'classnames'
 import {
+  DataTypeProvider,
   SearchState,
   SelectionState,
   SortingState,
@@ -33,6 +34,7 @@ class BeeGrid extends React.Component {
       selection,
       sorting,
       paging,
+      providers = [],
       ...rest
     } = this.props
 
@@ -42,16 +44,25 @@ class BeeGrid extends React.Component {
     })
 
     return (
-      <Paper>
-
+      <React.Fragment>
         {loading && <LinearProgress/>}
-
         <Grid
           rows={rows}
           columns={columns}
           className={GridClasses}
           {...rest}
         >
+
+          {providers.length > 0
+            ? providers.map((provider) => (
+              <DataTypeProvider
+                key={provider.for}
+                {...provider}
+              />
+            )
+            ) : null
+          }
+
           <SelectionState {...selection} />
           <SearchState {...search} />
           <SortingState {...sorting} />
@@ -73,7 +84,7 @@ class BeeGrid extends React.Component {
           {paging && <PagingPanel {...paging} />}
 
         </Grid>
-      </Paper>
+      </React.Fragment>
     )
   }
 }
@@ -82,6 +93,7 @@ BeeGrid.propTypes = {
   classes: PropTypes.object.isRequired,
   rows: PropTypes.array,
   columns: PropTypes.array,
+  providers: PropTypes.array,
   loading: PropTypes.bool,
   search: PropTypes.object,
   toolbar: PropTypes.any,
