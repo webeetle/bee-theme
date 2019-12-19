@@ -7,6 +7,7 @@ storiesOf("Snackbar", module).add("Success", () => {
     <BeeSnackbar
       variant={"success"}
       message={"Operation completed"}
+      onClose={_ => alert("onCloseFunction")}
     />
   );
 });

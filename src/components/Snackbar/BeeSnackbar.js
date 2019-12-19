@@ -66,16 +66,25 @@ const style = theme => ({
 })
 
 class BeeSnackbar extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleClose = this.handleClose.bind(this)
+  }
+
   handleClose () {
     this.setState({ open: false })
+
+    if (this.props.onClose) {
+      this.props.onClose()
+    }
   }
 
   componentDidMount () {
     if (this.props.open) {
       this.setState({ open: this.props.open })
-      return
+    } else {
+      this.setState({ open: true })
     }
-    this.setState({ open: true })
   }
 
   render () {
@@ -85,7 +94,7 @@ class BeeSnackbar extends React.Component {
       ...rest
     } = this.props
 
-    const open = (this.state && this.state.open) || null
+    const open = (this.state && this.state.open) ? this.state.open : null
 
     return (
       <Snackbar
@@ -106,7 +115,8 @@ BeeSnackbar.propTypes = {
   classes: PropTypes.object.isRequired,
   variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired,
   message: PropTypes.node,
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  onClose: PropTypes.func
 }
 
 export default withStyles(style)(BeeSnackbar)
