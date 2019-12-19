@@ -7,7 +7,9 @@ import DialogActions from '@material-ui/core/DialogActions'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 import Draggable from 'react-draggable'
-import { Paper } from '@material-ui/core'
+import { Paper, withStyles } from '@material-ui/core'
+import BeeDialogStyle from './BeeDialogStyle'
+import classNames from 'classnames'
 
 const Tools = ({ toolbarBtns }) => {
   return toolbarBtns && Array.isArray(toolbarBtns) && toolbarBtns.length ? toolbarBtns.map(item => item) : null
@@ -22,7 +24,23 @@ function PaperComponent (props) {
 }
 
 function BeeDialog (props) {
-  const { open, title, toolbarBtns, maxWidth, children, styleContent, onClose, draggable, disableBackdropClick, disableEscapeKeyDown } = props
+  const {
+    open,
+    title,
+    toolbarBtns,
+    maxWidth,
+    children,
+    onClose,
+    draggable,
+    disableBackdropClick,
+    disableEscapeKeyDown,
+    classes,
+    color
+  } = props
+
+  const dialogClasses = classNames({
+    [classes[color]]: color
+  })
 
   return (
     <Dialog
@@ -34,16 +52,16 @@ function BeeDialog (props) {
       disableEscapeKeyDown={disableEscapeKeyDown}
     >
 
-      <DialogTitle style={onClose ? { paddingLeft: '0px' } : null}>
+      <DialogTitle className={dialogClasses}>
+        {title}
         {onClose
-          ? <IconButton onClick={onClose}>
+          ? <IconButton className={classes.closeButton} onClick={onClose}>
             <CloseIcon />
           </IconButton>
           : null}
-        {title}
       </DialogTitle>
 
-      <DialogContent style={styleContent}>
+      <DialogContent className={classes.root}>
         {children}
       </DialogContent>
 
@@ -52,6 +70,10 @@ function BeeDialog (props) {
       </DialogActions>
     </Dialog>
   )
+}
+
+BeeDialog.defaultProps = {
+  color: 'default'
 }
 
 BeeDialog.propTypes = {
@@ -65,7 +87,9 @@ BeeDialog.propTypes = {
   draggable: PropTypes.bool,
   disableBackdropClick: PropTypes.bool,
   disableEscapeKeyDown: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
+  classes: PropTypes.any,
+  color: PropTypes.oneOf(['default', 'info', 'warning', 'success', 'danger', 'dark'])
 }
 
-export default BeeDialog
+export default withStyles(BeeDialogStyle)(BeeDialog)
