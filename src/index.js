@@ -23,6 +23,7 @@ export { default as BeeInput } from './components/Input/BeeCustomInput'
 export { default as BeeDrawer } from './components/Drawer/BeeDrawer'
 export { default as BeeDialog } from './components/Dialog/BeeDialog'
 export { default as BeeGrid } from './components/Grid/BeeGrid'
+export { default as BeeSnackbar } from './components/Snackbar/BeeSnackbar'
 export { formatPrice as BeeFormatPrice } from './components/Input/BeeFormatters'
 
 const config = {
@@ -62,7 +63,7 @@ const config = {
   palette: {
     type: 'light',
     background: {
-      default: '#fff'
+      default: '#fafafa'
     },
     primary: {
       main: '#fec62a',
