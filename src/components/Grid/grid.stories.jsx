@@ -18,6 +18,13 @@ export const Standard = () => {
     {name: "Nunzia", gender: "Female", city: "Nocera Inferiore", car: "BMW Serie 1"}
   ]);
 
+  const [tableColumnExtensions] = useState([
+    { columnName: 'name', width: '20%', align: 'center' },
+    { columnName: 'gender', width: '15%', align: 'left' },
+    { columnName: 'city', width: 'auto', align:'right' },
+    { columnName: 'car', width: 'auto' }
+  ]);
+
   const providers = [
     {
       "for": ["gender"],
@@ -32,10 +39,13 @@ export const Standard = () => {
         rows={rows}
         providers={providers}
       />
-      <Typography variant={"h5"} style={{marginTop: 30}}>Loading Grid</Typography>
+      <Typography variant={"h5"} style={{marginTop: 30, marginBottom:10}}>Column size / column align / loading</Typography>
       <BeeGrid
         columns={columns}
-        rows={[]}
+        table={{
+          columnExtensions: tableColumnExtensions
+        }}
+        rows={rows}
         loading={true}
       />
     </div>
