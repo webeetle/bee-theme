@@ -13,6 +13,9 @@ class BeeMenuMore extends React.Component {
     this.state = {
       anchorEl: null
     }
+
+    this.handleClick = this.handleClick.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
 
   handleClick (event) {
