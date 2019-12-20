@@ -34,6 +34,8 @@ class BeeGrid extends React.Component {
       selection,
       sorting,
       paging,
+      table,
+      tableHeaderRow,
       providers = [],
       ...rest
     } = this.props
@@ -73,9 +75,12 @@ class BeeGrid extends React.Component {
           {sorting && !sorting.onSortingChange ? <IntegratedSorting/> : null}
           {paging && !paging.onCurrentPageChange ? <IntegratedPaging/> : <CustomPaging {...paging} />}
 
-          <Table/>
+          <Table
+            {...table}
+          />
           <TableHeaderRow
             showSortingControls={sorting && sorting.showSortingControls}
+            {...tableHeaderRow}
           />
 
           {(search || toolbar) && <Toolbar/>}
@@ -90,7 +95,7 @@ class BeeGrid extends React.Component {
 }
 
 BeeGrid.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object,
   rows: PropTypes.array,
   columns: PropTypes.array,
   providers: PropTypes.array,
@@ -98,6 +103,8 @@ BeeGrid.propTypes = {
   search: PropTypes.object,
   toolbar: PropTypes.any,
   selection: PropTypes.object,
+  table: PropTypes.object,
+  tableHeaderRow: PropTypes.object,
   sorting: PropTypes.object,
   paging: PropTypes.object,
   children: PropTypes.node,
