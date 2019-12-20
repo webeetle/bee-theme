@@ -25,6 +25,7 @@ class BeeDropdown extends React.Component {
     }
     this.handleClick = this.handleClick.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.handleCloseAway = this.handleCloseAway.bind(this)
   }
 
   handleClick () {
