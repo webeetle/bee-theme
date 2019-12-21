@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
-import BeeDialog from "./BeeDialog";
-import { Typography } from "@material-ui/core";
+import React, { useState } from 'react'
+import { storiesOf } from '@storybook/react'
+import BeeDialog from './BeeDialog'
+import { Typography } from '@material-ui/core'
 
-storiesOf("Dialog", module).add("Default", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Default', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -18,17 +18,17 @@ storiesOf("Dialog", module).add("Default", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Primary", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Primary', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="primary"
+      color='primary'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -37,17 +37,17 @@ storiesOf("Dialog", module).add("Primary", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Secondary", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Secondary', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="secondary"
+      color='secondary'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -56,17 +56,17 @@ storiesOf("Dialog", module).add("Secondary", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Warning", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Warning', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="warning"
+      color='warning'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -75,17 +75,17 @@ storiesOf("Dialog", module).add("Warning", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Danger", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Danger', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="danger"
+      color='danger'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -94,17 +94,17 @@ storiesOf("Dialog", module).add("Danger", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Success", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Success', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="success"
+      color='success'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -113,17 +113,17 @@ storiesOf("Dialog", module).add("Success", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Info", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Info', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="info"
+      color='info'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -132,17 +132,17 @@ storiesOf("Dialog", module).add("Info", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})
 
-storiesOf("Dialog", module).add("Dark", () => {
-  const [opened, setOpen] = useState(true);
+storiesOf('Dialog', module).add('Dark', () => {
+  const [opened, setOpen] = useState(true)
 
   return (
     <BeeDialog
-      color="dark"
+      color='dark'
       open={opened}
-      title={"Title"}
+      title={'Title'}
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -151,5 +151,5 @@ storiesOf("Dialog", module).add("Dark", () => {
         facilisis leo vel.
       </Typography>
     </BeeDialog>
-  );
-});
+  )
+})

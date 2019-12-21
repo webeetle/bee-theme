@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import * as BeeThemeConfig from './components/main-theme.jsx'
+import * as BeeThemeConfig from './components/main-theme'
 
 export { default as BeeButton } from './components/Button/BeeButton'
 export { default as BeeCard } from './components/Card/BeeCard'
