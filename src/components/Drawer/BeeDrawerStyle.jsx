@@ -1,7 +1,5 @@
 import {
-  danger, dark,
-  drawerWidth,
-  drawerWidthCollapsed, info, success, warning
+  danger, dark, info, success, warning
 } from "../main-theme";
 
 const DrawerStyle = theme => ({
@@ -77,7 +75,7 @@ const DrawerStyle = theme => ({
 
   open: {
     "& .MuiDrawer-paper": {
-      width: drawerWidth,
+      width: theme.drawerWidth,
       overflowX: 'hidden',
       left:0,
       transition: theme.transitions.create(['width', 'left'], {
@@ -94,10 +92,10 @@ const DrawerStyle = theme => ({
         duration: theme.transitions.duration.leavingScreen,
       }),
       overflowX: 'hidden',
-      width: drawerWidth,
-      left: 0 - (drawerWidth + 2),
+      width: theme.drawerWidth,
+      left: 0 - (theme.drawerWidth + 2),
       [theme.breakpoints.up('sm')]: {
-        width: drawerWidthCollapsed,
+        width: theme.drawerWidthCollapsed,
         left:0
       },
     }
@@ -110,7 +108,7 @@ const DrawerStyle = theme => ({
 
   drawerBody:{
     boxSizing:'border-box',
-    width: drawerWidth
+    width: theme.drawerWidth
   }
 });
 
