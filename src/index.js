@@ -1,12 +1,14 @@
 import { createMuiTheme } from '@material-ui/core/styles'
+import * as BeeThemeConfig from './components/main-theme'
 
 export { default as BeeButton } from './components/Button/BeeButton'
 export { default as BeeCard } from './components/Card/BeeCard'
 export { default as BeeCardBody } from './components/Card/BeeCardBody'
 export { default as BeeCardFooter } from './components/Card/BeeCardFooter'
+export { default as BeeCardHeader } from './components/Card/BeeCardHeader'
 export { default as BeeCheckbox } from './components/Checkbox/BeeCheckbox'
 export { default as BeeChip } from './components/Chip/BeeChip'
-export { default as BeeDropDown } from './components/Dropdown/BeeDropdown'
+export { default as BeeDropdown } from './components/Dropdown/BeeDropdown'
 export { default as BeeMenuMore } from './components/Dropdown/BeeMenuMore'
 export { default as BeeAutocompleteWrapper } from './components/Forms/AutocompleteWrapper'
 export { default as BeeDatePickerWrapper } from './components/Forms/DatePickerWrapper'
@@ -23,7 +25,9 @@ export { default as BeeInput } from './components/Input/BeeCustomInput'
 export { default as BeeDrawer } from './components/Drawer/BeeDrawer'
 export { default as BeeDialog } from './components/Dialog/BeeDialog'
 export { default as BeeGrid } from './components/Grid/BeeGrid'
+export { default as BeeSnackbar } from './components/Snackbar/BeeSnackbar'
 export { formatPrice as BeeFormatPrice } from './components/Input/BeeFormatters'
+export { BeeThemeConfig }
 
 const config = {
   themeName: 'Bee Theme',
@@ -62,7 +66,7 @@ const config = {
   palette: {
     type: 'light',
     background: {
-      default: '#fff'
+      default: '#fafafa'
     },
     primary: {
       main: '#fec62a',

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {storiesOf} from '@storybook/react';
 import BeeGrid from './BeeGrid';
+import BeeButton from '../Button/BeeButton';
 import {Typography} from "@material-ui/core";
 
 
@@ -13,20 +14,38 @@ export const Standard = () => {
   ]);
   const [rows] = useState([
     {name: "Marco", gender: "Male", city: "Angri", car: "Hyundai 10"},
-    {name: "Gennaro", gender: "Male", city: "Pagani", car: "Panda 2008"},
+    {name: "Gennaro", gender: "??", city: "Pagani", car: "Panda 2008"},
     {name: "Nunzia", gender: "Female", city: "Nocera Inferiore", car: "BMW Serie 1"}
   ]);
+
+  const [tableColumnExtensions] = useState([
+    { columnName: 'name', width: '20%', align: 'center' },
+    { columnName: 'gender', width: '15%', align: 'left' },
+    { columnName: 'city', width: 'auto', align:'right' },
+    { columnName: 'car', width: 'auto' }
+  ]);
+
+  const providers = [
+    {
+      "for": ["gender"],
+      formatterComponent: ({row, value}) => <BeeButton color={"primary"} variant={"contained"} size={"sm"} onClick={() => alert(value)}>Clicca per scoprire</BeeButton>
+    }
+  ]
   return (
     <div>
       <Typography variant={"h5"}>Default Grid</Typography>
       <BeeGrid
         columns={columns}
         rows={rows}
+        providers={providers}
       />
-      <Typography variant={"h5"} style={{marginTop: 30}}>Loading Grid</Typography>
+      <Typography variant={"h5"} style={{marginTop: 30, marginBottom:10}}>Column size / column align / loading</Typography>
       <BeeGrid
         columns={columns}
-        rows={[]}
+        table={{
+          columnExtensions: tableColumnExtensions
+        }}
+        rows={rows}
         loading={true}
       />
     </div>

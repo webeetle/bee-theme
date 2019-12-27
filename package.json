@@ -1,6 +1,6 @@
 {
   "name": "@webeetle/bee-theme",
-  "version": "0.4.0",
+  "version": "0.5.6",
   "description": "Webeetle Material UI Kit",
   "author": "Webeetle <info@webeetle.com>",
   "main": "./core/index.js",
@@ -16,7 +16,7 @@
     "@material-ui/pickers": "^3.2.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/user-event": "^8.0.0",
     "classnames": "^2.2.6",
     "clsx": "^1.0.4",
     "date-fns": "^2.8.1",
