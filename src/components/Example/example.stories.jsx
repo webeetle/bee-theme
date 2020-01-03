@@ -11,6 +11,7 @@ import {drawerWidth, drawerWidthCollapsed} from "../main-theme";
 export const Layout = () => {
   const [collapse, setCollapse] = useState(true);
   const [open, setOpen] = React.useState(false);
+  
   const useStyles = makeStyles(theme => ({
     layout: {
       display: "flex",
@@ -34,6 +35,7 @@ export const Layout = () => {
       },
     }
   }));
+
   const classes = useStyles();
   return (
     <div className={classes.layout}>

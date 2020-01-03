@@ -14,6 +14,7 @@ export { default as BeeAutocompleteWrapper } from './components/Forms/Autocomple
 export { default as BeeDatePickerWrapper } from './components/Forms/DatePickerWrapper'
 export { default as BeeFileUploadWrapper } from './components/Forms/FileUploadWrapper'
 export { default as BeeRadioGroupWrapper } from './components/Forms/RadioGroupWrapper'
+export { default as BeeCheckboxWrapper } from './components/Forms/CheckboxWrapper'
 export { default as BeeSelectMultipleWrapper } from './components/Forms/SelectMultipleWrapper'
 export { default as BeeSelectWrapper } from './components/Forms/SelectWrapper'
 export { default as BeeSwitchWrapper } from './components/Forms/SwitchWrapper'
