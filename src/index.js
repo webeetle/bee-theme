@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import * as BeeThemeConfig from './components/main-theme'
 
 export { default as BeeButton } from './components/Button/BeeButton'
 export { default as BeeCard } from './components/Card/BeeCard'
@@ -28,9 +27,8 @@ export { default as BeeDialog } from './components/Dialog/BeeDialog'
 export { default as BeeGrid } from './components/Grid/BeeGrid'
 export { default as BeeSnackbar } from './components/Snackbar/BeeSnackbar'
 export { formatPrice as BeeFormatPrice } from './components/Input/BeeFormatters'
-export { BeeThemeConfig }
 
-const config = {
+export const config = {
   themeName: 'Bee Theme',
   typography: {
     fontFamily: [
