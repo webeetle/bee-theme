@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   paper: {
     position: 'absolute',
-    zIndex: 1,
+    zIndex: 100,
     marginTop: 20,
     left: 0,
     right: 0,
@@ -65,7 +65,7 @@ const renderInput = (inputProps) => {
 /* Option */
 const renderOption = ({ suggestion, index, itemProps, highlightedIndex, selectedItem }) => {
   const isHighlighted = highlightedIndex === index
-  const isSelected = (selectedItem || '').indexOf(suggestion.label) > -1
+  const isSelected = selectedItem ? selectedItem.indexOf(suggestion.label) > -1 : false
 
   return (
     <MenuItem
