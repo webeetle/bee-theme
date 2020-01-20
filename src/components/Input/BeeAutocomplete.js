@@ -65,7 +65,8 @@ const renderInput = (inputProps) => {
 /* Option */
 const renderOption = ({ suggestion, index, itemProps, highlightedIndex, selectedItem }) => {
   const isHighlighted = highlightedIndex === index
-  const isSelected = selectedItem ? selectedItem.indexOf(suggestion.label) > -1 : false
+  // const isSelected = selectedItem && selectedItem ? selectedItem.indexOf(suggestion.label) > -1 : false
+  const isSelected = false
 
   return (
     <MenuItem
