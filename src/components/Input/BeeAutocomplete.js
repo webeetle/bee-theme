@@ -18,14 +18,14 @@ const styles = theme => ({
   paper: {
     position: 'absolute',
     zIndex: 1,
-    marginTop: theme.spacing.unit(1),
+    marginTop: 20,
     left: 0,
     right: 0,
     maxHeight: 250,
     overflowY: 'auto'
   },
   chip: {
-    margin: `${theme.spacing.unit(1) / 2}px ${theme.spacing.unit(1) / 4}px`
+    margin: '20px 30px'
   },
   inputRoot: {
     flexWrap: 'wrap'
@@ -35,7 +35,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   divider: {
-    height: theme.spacing.unit(1) * 2
+    height: 30
   }
 })
 
