@@ -116,7 +116,7 @@ class BeeAutocomplete extends Component {
   getOptions (value) {
     const { rowsData, remote } = this.props
     if (!remote) {
-      return this.searchLocal(value, remote)
+      return this.searchLocal(value, rowsData)
     } else {
       return rowsData
     }
