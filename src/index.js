@@ -26,6 +26,8 @@ export { default as BeeDrawer } from './components/Drawer/BeeDrawer'
 export { default as BeeDialog } from './components/Dialog/BeeDialog'
 export { default as BeeGrid } from './components/Grid/BeeGrid'
 export { default as BeeSnackbar } from './components/Snackbar/BeeSnackbar'
+export { default as BeeRoundedTabs } from './components/Tabs/Rounded/BeeRoundedTabs'
+export { default as BeeRoundedTab } from './components/Tabs/Rounded/BeeRoundedTab'
 export { formatPrice as BeeFormatPrice } from './components/Input/BeeFormatters'
 
 export const config = {
