@@ -35,7 +35,8 @@ function BeeDialog (props) {
     disableBackdropClick,
     disableEscapeKeyDown,
     classes,
-    color
+    color,
+    ...rest
   } = props
 
   const dialogClasses = classNames({
@@ -50,6 +51,7 @@ function BeeDialog (props) {
       PaperComponent={draggable ? PaperComponent : undefined}
       disableBackdropClick={disableBackdropClick}
       disableEscapeKeyDown={disableEscapeKeyDown}
+      {...rest}
     >
 
       <DialogTitle className={dialogClasses}>
