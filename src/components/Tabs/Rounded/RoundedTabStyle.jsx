@@ -2,6 +2,7 @@ const style = theme => ({
   root: {
     textTransform: 'uppercase',
     minWidth: 150,
+    maxWidth: 300,
     minHeight: 50,
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing(1),
