@@ -75,6 +75,6 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "pre-commit": "^1.2.2",
-    "@storybook/addon-info": "^5.2.8"
+    "@storybook/addon-info": "^5.3.13"
   }
 }
