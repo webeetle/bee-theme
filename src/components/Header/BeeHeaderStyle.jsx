@@ -6,6 +6,8 @@ import {
   dark
 } from '../main-theme'
 
+import primaryHeaderBg from './images/primary-header.png'
+
 const headerStyle = theme => ({
   appBar: {
     display: 'flex',
@@ -72,6 +74,9 @@ const headerStyle = theme => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText
   },
+  primaryBg: {
+    backgroundImage: `url(${primaryHeaderBg})`
+  },
   secondary: {
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.secondary.contrastText
@@ -109,6 +114,6 @@ const headerStyle = theme => ({
     color: '#555',
     backgroundColor: '#fff !important'
   }
-});
+})
 
-export default headerStyle;
+export default headerStyle

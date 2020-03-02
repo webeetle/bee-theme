@@ -59,12 +59,14 @@ class BeeHeader extends React.Component {
       brand,
       fixed,
       absolute,
-      handleDrawerToggle
+      handleDrawerToggle,
+      bgImage
     } = this.props
 
     const appBarClasses = classNames({
       [classes.appBar]: true,
       [classes[color]]: color,
+      [classes[color + 'Bg']]: bgImage,
       [classes.absolute]: absolute,
       [classes.fixed]: fixed,
       'BeeHeader-root': true
@@ -105,7 +107,8 @@ class BeeHeader extends React.Component {
 }
 
 BeeHeader.defaultProp = {
-  color: 'white'
+  color: 'white',
+  bgImage: false
 }
 
 BeeHeader.propTypes = {
@@ -127,6 +130,7 @@ BeeHeader.propTypes = {
   brand: PropTypes.any,
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
+  bgImage: PropTypes.bool,
   changeColorOnScroll: PropTypes.shape({
     height: PropTypes.number.isRequired,
     color: PropTypes.oneOf([
