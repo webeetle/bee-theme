@@ -46,7 +46,7 @@ export const Layout = () => {
               <Typography variant={"h5"} align={"center"}>W</Typography> :
               <Typography variant={"h5"} align={"center"}>Webeetle</Typography>
         }
-        color={"secondary"}
+        color={"gradient1"}
         collapsed={collapse}
         anchor={"left"}
         variant={"persistent"}
@@ -88,10 +88,10 @@ export const Layout = () => {
       </BeeDrawer>
 
       <BeeHeader fixed={true}
-                 color={"primary"}
-                 brand={<Typography variant={"h5"}>Page Title</Typography>}
-                 handleDrawerToggle={() => setCollapse(!collapse)}
-                 rightLinks={<BeeButton size={"small"}>Other Link</BeeButton>}
+        bgImage={true}
+        brand={<Typography variant={"h5"}>Page Title</Typography>}
+        handleDrawerToggle={() => setCollapse(!collapse)}
+        rightLinks={<BeeButton size={"small"}>Other Link</BeeButton>}
       />
 
       <main className={"content"}>

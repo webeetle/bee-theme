@@ -27,6 +27,24 @@ const DrawerStyle = theme => ({
       color: theme.palette.secondary.contrastText
     }
   },
+  gradient1: {
+    "& .MuiDrawer-paper": {
+      backgroundImage: "linear-gradient(#FF5858, #F09819)",
+      color: theme.palette.secondary.contrastText
+    },
+    "& .MuiSvgIcon-root":{
+      color: theme.palette.secondary.contrastText
+    }
+  },
+  gradient2: {
+    "& .MuiDrawer-paper": {
+      backgroundImage: "linear-gradient(#9438FB, #11ACD6)",
+      color: theme.palette.secondary.contrastText
+    },
+    "& .MuiSvgIcon-root":{
+      color: theme.palette.secondary.contrastText
+    }
+  },
   info: {
     "& .MuiDrawer-paper": {
       backgroundColor: info.main,

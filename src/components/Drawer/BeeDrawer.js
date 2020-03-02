@@ -63,7 +63,9 @@ BeeDrawer.propTypes = {
     'success',
     'warning',
     'danger',
-    'dark'
+    'dark',
+    'gradient1',
+    'gradient2'
   ]),
   items: PropTypes.array,
   variant: PropTypes.string,

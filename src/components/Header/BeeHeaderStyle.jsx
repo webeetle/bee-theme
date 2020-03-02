@@ -75,7 +75,8 @@ const headerStyle = theme => ({
     color: theme.palette.primary.contrastText
   },
   primaryBg: {
-    backgroundImage: `url(${primaryHeaderBg})`
+    backgroundImage: `url(${primaryHeaderBg})`,
+    color: '#fff',
   },
   secondary: {
     backgroundColor: theme.palette.secondary.main,

@@ -43,7 +43,7 @@ export const config = {
       '"Segoe UI Symbol"'
     ].join(','),
     useNextVariants: true,
-    color: '#444',
+    color: '#444444',
     h1: {
       fontWeight: 600
     },
@@ -67,7 +67,7 @@ export const config = {
   palette: {
     type: 'light',
     background: {
-      default: '#fafafa'
+      default: '#EFEFF5'
     },
     primary: {
       main: '#fec62a',
