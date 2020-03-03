@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 export { default as BeeButton } from './components/Button/BeeButton'
+export { default as BeePaper } from './components/Paper/BeePaper'
 export { default as BeeCard } from './components/Card/BeeCard'
 export { default as BeeCardBody } from './components/Card/BeeCardBody'
 export { default as BeeCardFooter } from './components/Card/BeeCardFooter'
