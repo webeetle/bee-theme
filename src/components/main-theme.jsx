@@ -5,6 +5,7 @@ import orange from '@material-ui/core/colors/orange'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import white from '@material-ui/core/colors/grey'
 import { hexToRgba } from './styles/utils'
+import theme from '..'
 
 const drawerWidth = 240
 const drawerWidthCollapsed = 55
@@ -30,6 +31,10 @@ const warning = {
 const dark = {
   main: blueGrey[500],
   textContrast: white[50]
+}
+const grey = {
+  main: white[100],
+  textContrast: '#444'
 }
 
 const disabledButtonContained = {
@@ -69,6 +74,7 @@ export {
   success,
   warning,
   dark,
+  grey,
   drawerWidth,
   drawerWidthCollapsed,
   headerHeight,

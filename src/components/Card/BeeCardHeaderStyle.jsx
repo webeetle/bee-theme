@@ -3,7 +3,8 @@ import {
   success,
   danger,
   info,
-  dark
+  dark,
+  grey
 } from '../main-theme'
 import { darken } from '@material-ui/core/styles'
 
@@ -72,6 +73,12 @@ const cardHeaderStyle = theme => ({
     color: dark.textContrast,
     background: dark.main,
     borderBottom: darken(dark.main, 0.3)
+  },
+  greyCardHeader: {
+    fontFamily: theme.typography.fontFamily,
+    color: grey.textContrast,
+    background: grey.main,
+    borderBottom: darken(grey.main, 0.3)
   }
 })
 
