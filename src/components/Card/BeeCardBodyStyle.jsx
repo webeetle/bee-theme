@@ -7,6 +7,6 @@ const cardBodyStyle = theme => ({
   cardBodyNoPadding: {
     padding: 0
   }
-});
+})
 
-export default cardBodyStyle;
+export default cardBodyStyle

@@ -38,7 +38,7 @@ class BeeMenuMore extends React.Component {
     const { anchorEl } = this.state
     const { configuration, icon } = this.props
 
-    let actionIcon = (<MoreVertIcon/>)
+    let actionIcon = (<MoreVertIcon />)
     if (icon) {
       actionIcon = icon
     }
@@ -49,8 +49,10 @@ class BeeMenuMore extends React.Component {
       configuration.forEach((item, key) => {
         if (!item.hidden) {
           menuElements.push((
-            <MenuItem style={{ fontSize: '15px' }} key={'menu-ud-' + key}
-              onClick={(e) => this.handleClose(e, item.onClick, this.props.id, this.props.extraParams)}>
+            <MenuItem
+              style={{ fontSize: '15px' }} key={'menu-ud-' + key}
+              onClick={(e) => this.handleClose(e, item.onClick, this.props.id, this.props.extraParams)}
+            >
               <div style={{ marginRight: '15px', display: 'flex' }}>
                 {item.icon}
               </div>
@@ -66,9 +68,9 @@ class BeeMenuMore extends React.Component {
     return (
       <span>
         <IconButton
-          aria-label="More"
+          aria-label='More'
           aria-owns={anchorEl ? 'long-menu' : null}
-          aria-haspopup="true"
+          aria-haspopup='true'
           size={this.props.size || 'medium'}
           onClick={this.handleClick}
           disabled={this.props.disabled}

@@ -7,6 +7,6 @@ const cardFooterStyle = theme => ({
     padding: '0.9375rem 1.875rem',
     borderTop: '1px solid rgba(0, 0, 0, 0.12)'
   }
-});
+})
 
-export default cardFooterStyle;
+export default cardFooterStyle

@@ -12,9 +12,10 @@ class BeeCheckbox extends React.Component {
 
     return (
       <Checkbox
-        color="primary"
+        color='primary'
         {...rest}
-        className={checkboxClasses} />
+        className={checkboxClasses}
+      />
     )
   }
 }

@@ -4,41 +4,41 @@ import {
   success,
   warning,
   dark
-} from '../main-theme';
+} from '../main-theme'
 
 const CheckboxStyle = theme => ({
   default: {
     color: theme.palette.secondary.main,
     '&.Mui-checked': {
-      color: theme.palette.secondary.main,
+      color: theme.palette.secondary.main
     },
-    checked: {},
+    checked: {}
   },
   primary: {
     color: theme.palette.primary.main,
     '&.Mui-checked': {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.main
     },
-    checked: {},
+    checked: {}
   },
   secondary: {
     color: theme.palette.secondary.main,
     '&.Mui-checked': {
-      color: theme.palette.secondary.main,
+      color: theme.palette.secondary.main
     },
-    checked: {},
+    checked: {}
   },
   warning: {
     color: warning.main,
     '&.Mui-checked': {
-      color: warning.main,
+      color: warning.main
     },
-    checked: {},
+    checked: {}
   },
   danger: {
     color: danger.main,
     '&.Mui-checked': {
-      color: danger.main,
+      color: danger.main
     }
   },
   info: {
@@ -50,7 +50,7 @@ const CheckboxStyle = theme => ({
   success: {
     color: success.main,
     '&.Mui-checked': {
-      color: success.main,
+      color: success.main
     }
   },
   dark: {
@@ -59,6 +59,6 @@ const CheckboxStyle = theme => ({
       color: dark.main
     }
   }
-});
+})
 
-export default CheckboxStyle;
+export default CheckboxStyle

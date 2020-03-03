@@ -4,20 +4,20 @@ import {
   success,
   warning,
   dark
-} from '../main-theme';
-import { darken } from '@material-ui/core/styles';
+} from '../main-theme'
+import { darken } from '@material-ui/core/styles'
 
 const chipStyle = {
   danger: {
     color: danger.textContrast,
     backgroundColor: danger.main,
     '& > .MuiAvatar-root': {
-      backgroundColor: darken(danger.main, .3),
+      backgroundColor: darken(danger.main, 0.3),
       color: danger.textContrast
     },
     '&.MuiChip-clickable,&.MuiChip-deletable': {
       '&:hover,&:focus': {
-        backgroundColor: darken(danger.main, .1),
+        backgroundColor: darken(danger.main, 0.1),
         color: danger.textContrast
       }
     }
@@ -26,12 +26,12 @@ const chipStyle = {
     color: info.textContrast,
     backgroundColor: info.main,
     '& > .MuiAvatar-root': {
-      backgroundColor: darken(info.main, .3),
+      backgroundColor: darken(info.main, 0.3),
       color: info.textContrast
     },
     '&.MuiChip-clickable,&.MuiChip-deletable': {
       '&:hover,&:focus': {
-        backgroundColor: darken(info.main, .1),
+        backgroundColor: darken(info.main, 0.1),
         color: info.textContrast
       }
     }
@@ -40,12 +40,12 @@ const chipStyle = {
     color: success.textContrast,
     backgroundColor: success.main,
     '& > .MuiAvatar-root': {
-      backgroundColor: darken(success.main, .3),
+      backgroundColor: darken(success.main, 0.3),
       color: success.textContrast
     },
     '&.MuiChip-clickable,&.MuiChip-deletable': {
       '&:hover,&:focus': {
-        backgroundColor: darken(success.main, .1),
+        backgroundColor: darken(success.main, 0.1),
         color: success.textContrast
       }
     }
@@ -54,12 +54,12 @@ const chipStyle = {
     color: warning.textContrast,
     backgroundColor: warning.main,
     '& > .MuiAvatar-root': {
-      backgroundColor: darken(warning.main, .3),
+      backgroundColor: darken(warning.main, 0.3),
       color: warning.textContrast
     },
     '&.MuiChip-clickable,&.MuiChip-deletable': {
       '&:hover,&:focus': {
-        backgroundColor: darken(warning.main, .1),
+        backgroundColor: darken(warning.main, 0.1),
         color: warning.textContrast
       }
     }
@@ -68,16 +68,16 @@ const chipStyle = {
     color: dark.textContrast,
     backgroundColor: dark.main,
     '& > .MuiAvatar-root': {
-      backgroundColor: darken(dark.main, .3),
+      backgroundColor: darken(dark.main, 0.3),
       color: dark.textContrast
     },
     '&.MuiChip-clickable,&.MuiChip-deletable': {
       '&:hover,&:focus': {
-        backgroundColor: darken(dark.main, .1),
+        backgroundColor: darken(dark.main, 0.1),
         color: dark.textContrast
       }
     }
   }
-};
+}
 
-export default chipStyle;
+export default chipStyle

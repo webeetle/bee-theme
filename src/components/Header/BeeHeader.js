@@ -72,13 +72,7 @@ class BeeHeader extends React.Component {
       'BeeHeader-root': true
     })
 
-    let iconBar = (<IconButton
-      color='inherit'
-      aria-label='open drawer'
-      onClick={handleDrawerToggle}
-    >
-      <Menu />
-    </IconButton>)
+    let iconBar = (<IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerToggle}><Menu /></IconButton>)
 
     if (!handleDrawerToggle) {
       iconBar = null

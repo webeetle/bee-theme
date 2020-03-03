@@ -46,8 +46,8 @@ class BeeGrid extends React.Component {
     })
 
     return (
-      <React.Fragment>
-        {loading && <LinearProgress/>}
+      <>
+        {loading && <LinearProgress />}
         <Grid
           rows={rows}
           columns={columns}
@@ -62,18 +62,17 @@ class BeeGrid extends React.Component {
                 {...provider}
               />
             )
-            ) : null
-          }
+            ) : null}
 
           <SelectionState {...selection} />
           <SearchState {...search} />
           <SortingState {...sorting} />
           <PagingState {...paging} />
 
-          {search && !search.onValueChange ? <IntegratedFiltering/> : null}
-          {selection && selection.showSelectAll ? <IntegratedSelection/> : null}
-          {sorting && !sorting.onSortingChange ? <IntegratedSorting/> : null}
-          {paging && !paging.onCurrentPageChange ? <IntegratedPaging/> : <CustomPaging {...paging} />}
+          {search && !search.onValueChange ? <IntegratedFiltering /> : null}
+          {selection && selection.showSelectAll ? <IntegratedSelection /> : null}
+          {sorting && !sorting.onSortingChange ? <IntegratedSorting /> : null}
+          {paging && !paging.onCurrentPageChange ? <IntegratedPaging /> : <CustomPaging {...paging} />}
 
           <Table
             {...table}
@@ -83,13 +82,13 @@ class BeeGrid extends React.Component {
             {...tableHeaderRow}
           />
 
-          {(search || toolbar) && <Toolbar/>}
-          {search && <SearchPanel/>}
+          {(search || toolbar) && <Toolbar />}
+          {search && <SearchPanel />}
           {selection && <TableSelection {...selection} />}
           {paging && <PagingPanel {...paging} />}
 
         </Grid>
-      </React.Fragment>
+      </>
     )
   }
 }

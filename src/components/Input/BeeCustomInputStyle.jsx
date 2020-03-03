@@ -1,7 +1,7 @@
 import {
   danger,
   success
-} from '../main-theme';
+} from '../main-theme'
 
 const customInputStyle = theme => ({
   disabled: {
@@ -80,6 +80,6 @@ const customInputStyle = theme => ({
       opacity: '1'
     }
   }
-});
+})
 
-export default customInputStyle;
+export default customInputStyle

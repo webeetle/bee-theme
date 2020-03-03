@@ -94,9 +94,9 @@ class BeeDropdown extends React.Component {
       <div>
         <div>
           <Button
-            aria-label="Notifications"
+            aria-label='Notifications'
             aria-owns={open ? 'menu-list' : null}
-            aria-haspopup="true"
+            aria-haspopup='true'
             {...buttonProps}
             buttonRef={node => {
               this.anchorEl = node
@@ -126,7 +126,7 @@ class BeeDropdown extends React.Component {
           {({ TransitionProps, placement }) => (
             <Grow
               in={open}
-              id="menu-list"
+              id='menu-list'
               style={
                 dropup
                   ? { transformOrigin: '0 100% 0' }
@@ -135,7 +135,7 @@ class BeeDropdown extends React.Component {
             >
               <Paper className={classes.dropdown}>
                 <ClickAwayListener onClickAway={this.handleCloseAway}>
-                  <MenuList role="menu" className={classes.menuList}>
+                  <MenuList role='menu' className={classes.menuList}>
                     {dropdownHeader !== undefined ? (
                       <MenuItem
                         onClick={this.handleClose}

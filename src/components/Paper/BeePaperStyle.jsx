@@ -1,6 +1,6 @@
 const paperTheme = theme => ({
   root: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(3, 2)
   },
   gradient1: {
     padding: theme.spacing(3),

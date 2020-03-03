@@ -13,7 +13,7 @@ const SwitchWrapper = (props) => {
   const nowLabel = rest.checked ? rest.checkedlabel : rest.uncheckedlabel
 
   return (
-    <React.Fragment>
+    <>
       <FormControlLabel
         control={
           <Switch
@@ -31,7 +31,7 @@ const SwitchWrapper = (props) => {
         }
         label={nowLabel || ''}
       />
-    </React.Fragment>
+    </>
   )
 }
 

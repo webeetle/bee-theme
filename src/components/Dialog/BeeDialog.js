@@ -46,7 +46,7 @@ function BeeDialog (props) {
   return (
     <Dialog
       open={open}
-      fullWidth={true}
+      fullWidth
       maxWidth={maxWidth}
       PaperComponent={draggable ? PaperComponent : undefined}
       disableBackdropClick={disableBackdropClick}
@@ -56,11 +56,7 @@ function BeeDialog (props) {
 
       <DialogTitle className={dialogClasses}>
         {title}
-        {onClose
-          ? <IconButton className={classes.closeButton} onClick={onClose}>
-            <CloseIcon />
-          </IconButton>
-          : null}
+        {onClose ? (<IconButton className={classes.closeButton} onClick={onClose}><CloseIcon /></IconButton>) : null}
       </DialogTitle>
 
       <DialogContent className={classes.root}>

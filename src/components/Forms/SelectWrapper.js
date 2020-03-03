@@ -85,7 +85,7 @@ const SelectWrapper = (props) => {
           }) : renderSelectedOption(value, value, native)
         }
       </Select>
-      {meta.error && meta.touched ? (<FormHelperText>{meta.error}</FormHelperText>) : <React.Fragment />}
+      {meta.error && meta.touched ? (<FormHelperText>{meta.error}</FormHelperText>) : <></>}
     </FormControl>
   )
 }

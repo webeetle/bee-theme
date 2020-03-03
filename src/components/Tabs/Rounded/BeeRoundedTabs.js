@@ -9,7 +9,7 @@ class BeeRoundedTabs extends React.Component {
     const { children, ...otherProps } = this.props
 
     return (
-      <Tabs { ...otherProps }>
+      <Tabs {...otherProps}>
         {children}
       </Tabs>
     )

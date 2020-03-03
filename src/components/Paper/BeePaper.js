@@ -7,7 +7,7 @@ import classNames from 'classnames'
 class BeePaper extends React.Component {
   render () {
     const { gradient, classes, children, ...rest } = this.props
-    
+
     const paperClasses = classNames({
       root: true,
       [classes[gradient]]: gradient

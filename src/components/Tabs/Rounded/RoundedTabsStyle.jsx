@@ -5,7 +5,7 @@ const style = theme => ({
     paddingLeft: 8
   },
   indicator: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent'
   }
 })
 

@@ -33,7 +33,7 @@ const RadioGroupWrapper = (props) => {
               key={'radioGroup_' + rowData.value}
               value={rowData.value}
               control={
-                <Radio color="primary" />
+                <Radio color='primary' />
               }
               label={rowData.label}
               labelPlacement={rowData.labelPlacement}

@@ -26,18 +26,18 @@ function BeeSnackbarContent (props) {
   return (
     <SnackbarContent
       className={classNames(classes[variant], className)}
-      aria-describedby="client-snackbar"
+      aria-describedby='client-snackbar'
       message={
-        <span id="client-snackbar" className={classes.message}>
+        <span id='client-snackbar' className={classes.message}>
           <Icon className={classNames(classes.icon, classes.iconVariant)} />
           {message}
         </span>
       }
       action={[
         <IconButton
-          key="close"
-          aria-label="Close"
-          color="inherit"
+          key='close'
+          aria-label='Close'
+          color='inherit'
           className={classes.close}
           onClick={onClose}
         >
@@ -100,7 +100,8 @@ class BeeSnackbar extends React.Component {
       <Snackbar
         open={open}
         onClose={this.handleClose}
-        {...rest}>
+        {...rest}
+      >
         <BeeSnackbarContentWrapper
           variant={variant}
           message={message}
