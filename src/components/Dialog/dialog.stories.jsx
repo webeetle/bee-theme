@@ -21,6 +21,25 @@ storiesOf('Dialog', module).add('Default', () => {
   )
 })
 
+storiesOf('Dialog', module).add('Grey', () => {
+  const [opened, setOpen] = useState(true)
+
+  return (
+    <BeeDialog
+      color='grey'
+      open={opened}
+      title='Title'
+      onClose={() => setOpen(false)}
+    >
+      <Typography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
+        facilisis leo vel.
+      </Typography>
+    </BeeDialog>
+  )
+})
+
 storiesOf('Dialog', module).add('Primary', () => {
   const [opened, setOpen] = useState(true)
 

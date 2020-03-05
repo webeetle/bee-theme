@@ -3,7 +3,8 @@ import {
   danger,
   success,
   info,
-  dark
+  dark,
+  grey
 } from './../main-theme'
 import { darken } from '@material-ui/core/styles'
 
@@ -58,6 +59,11 @@ const styles = theme => ({
     backgroundColor: dark.main,
     color: dark.textContrast,
     borderBottom: `1px solid ${darken(dark.main, 0.1)}`
+  },
+  grey: {
+    backgroundColor: grey.main,
+    color: grey.textContrast,
+    borderBottom: `1px solid ${darken(grey.main, 0.1)}`
   }
 })
 
