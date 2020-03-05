@@ -208,11 +208,18 @@ export const Paging = () => {
       <BeeGrid
         columns={columns}
         rows={rows}
+        showColumnResizing
         paging={{
           defaultCurrentPage: 0,
           defaultPageSize: 5,
           pageSizes: pageSizes
         }}
+        defaultColumnWidths={[
+          { columnName: 'name', width: 500 },
+          { columnName: 'gender', width: 100 },
+          { columnName: 'city', width: 130 },
+          { columnName: 'car', width: 150 }
+        ]}
       />
       <Typography variant='h5' style={{ marginTop: 30 }}>Remote paging (see console)</Typography>
       <BeeGrid

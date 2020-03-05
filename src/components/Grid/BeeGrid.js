@@ -18,7 +18,8 @@ import {
   SearchPanel,
   TableSelection,
   TableHeaderRow,
-  PagingPanel
+  PagingPanel,
+  TableColumnResizing
 } from '@devexpress/dx-react-grid-material-ui'
 
 class BeeGrid extends React.Component {
@@ -36,6 +37,8 @@ class BeeGrid extends React.Component {
       paging,
       table,
       tableHeaderRow,
+      defaultColumnWidths,
+      showColumnResizing,
       providers = [],
       ...rest
     } = this.props
@@ -45,6 +48,7 @@ class BeeGrid extends React.Component {
       [className]: className
     })
 
+    console.log(defaultColumnWidths.length)
     return (
       <>
         {loading && <LinearProgress />}
@@ -54,7 +58,6 @@ class BeeGrid extends React.Component {
           className={GridClasses}
           {...rest}
         >
-
           {providers.length > 0
             ? providers.map((provider) => (
               <DataTypeProvider
@@ -77,6 +80,7 @@ class BeeGrid extends React.Component {
           <Table
             {...table}
           />
+          {(showColumnResizing && defaultColumnWidths.length > 0) ? <TableColumnResizing defaultColumnWidths={defaultColumnWidths} /> : null}
           <TableHeaderRow
             showSortingControls={sorting && sorting.showSortingControls}
             {...tableHeaderRow}
@@ -93,11 +97,18 @@ class BeeGrid extends React.Component {
   }
 }
 
+BeeGrid.defaultProps = {
+  showColumnResizing: false,
+  defaultColumnWidths: []
+}
+
 BeeGrid.propTypes = {
   classes: PropTypes.object,
   rows: PropTypes.array,
   columns: PropTypes.array,
   providers: PropTypes.array,
+  showColumnResizing: PropTypes.bool,
+  defaultColumnWidths: PropTypes.array,
   loading: PropTypes.bool,
   search: PropTypes.object,
   toolbar: PropTypes.any,

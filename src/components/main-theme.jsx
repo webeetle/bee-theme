@@ -5,7 +5,6 @@ import orange from '@material-ui/core/colors/orange'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import white from '@material-ui/core/colors/grey'
 import { hexToRgba } from './styles/utils'
-import theme from '..'
 
 const drawerWidth = 240
 const drawerWidthCollapsed = 55
