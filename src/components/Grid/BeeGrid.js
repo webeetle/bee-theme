@@ -9,7 +9,8 @@ import {
   SortingState,
   IntegratedFiltering,
   IntegratedSelection,
-  IntegratedSorting, PagingState, IntegratedPaging, CustomPaging
+  IntegratedSorting, PagingState, IntegratedPaging, CustomPaging,
+  FilteringState
 } from '@devexpress/dx-react-grid'
 import {
   Grid,
@@ -40,6 +41,7 @@ class BeeGrid extends React.Component {
       defaultColumnWidths,
       showColumnResizing,
       providers = [],
+      filters,
       ...rest
     } = this.props
 
@@ -48,7 +50,7 @@ class BeeGrid extends React.Component {
       [className]: className
     })
 
-    console.log(defaultColumnWidths.length)
+    console.log(filters)
     return (
       <>
         {loading && <LinearProgress />}
@@ -72,7 +74,8 @@ class BeeGrid extends React.Component {
           <SortingState {...sorting} />
           <PagingState {...paging} />
 
-          {search && !search.onValueChange ? <IntegratedFiltering /> : null}
+          {filters ? <FilteringState filters={filters} /> : null}
+          {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering /> : null}
           {selection && selection.showSelectAll ? <IntegratedSelection /> : null}
           {sorting && !sorting.onSortingChange ? <IntegratedSorting /> : null}
           {paging && !paging.onCurrentPageChange ? <IntegratedPaging /> : <CustomPaging {...paging} />}
@@ -107,6 +110,7 @@ BeeGrid.propTypes = {
   rows: PropTypes.array,
   columns: PropTypes.array,
   providers: PropTypes.array,
+  filters: PropTypes.array,
   showColumnResizing: PropTypes.bool,
   defaultColumnWidths: PropTypes.array,
   loading: PropTypes.bool,

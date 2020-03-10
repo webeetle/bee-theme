@@ -220,6 +220,13 @@ export const Paging = () => {
           { columnName: 'city', width: 130 },
           { columnName: 'car', width: 150 }
         ]}
+        filters={[
+          {
+            columnName: 'name',
+            value: 'aro',
+            operation: 'contains'
+          }
+        ]}
       />
       <Typography variant='h5' style={{ marginTop: 30 }}>Remote paging (see console)</Typography>
       <BeeGrid
