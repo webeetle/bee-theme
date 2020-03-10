@@ -223,8 +223,7 @@ export const Paging = () => {
         filters={[
           {
             columnName: 'name',
-            value: 'aro',
-            operation: 'contains'
+            predicate: (value, filter, row) => value === 'Marco'
           }
         ]}
       />

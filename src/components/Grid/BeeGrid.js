@@ -50,7 +50,6 @@ class BeeGrid extends React.Component {
       [className]: className
     })
 
-    console.log(filters)
     return (
       <>
         {loading && <LinearProgress />}
@@ -75,7 +74,7 @@ class BeeGrid extends React.Component {
           <PagingState {...paging} />
 
           {filters ? <FilteringState filters={filters} /> : null}
-          {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering /> : null}
+          {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering columnExtensions={filters} /> : null}
           {selection && selection.showSelectAll ? <IntegratedSelection /> : null}
           {sorting && !sorting.onSortingChange ? <IntegratedSorting /> : null}
           {paging && !paging.onCurrentPageChange ? <IntegratedPaging /> : <CustomPaging {...paging} />}
