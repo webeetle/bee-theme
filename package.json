@@ -1,6 +1,6 @@
 {
   "name": "@webeetle/bee-theme",
-  "version": "0.11.6",
+  "version": "0.11.7",
   "description": "Webeetle Material UI Kit",
   "author": "Webeetle <info@webeetle.com>",
   "main": "./core/index.js",
