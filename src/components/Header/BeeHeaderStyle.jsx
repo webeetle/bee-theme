@@ -13,7 +13,7 @@ const headerStyle = theme => ({
     display: 'flex',
     border: '0',
     padding: '0.4rem 0',
-    color: '#555',
+    color: '#444',
     width: '100%',
     backgroundColor: '#fff',
     transition: 'all 150ms ease 0s',
@@ -26,7 +26,7 @@ const headerStyle = theme => ({
   appBarDefaultPadding: {
     display: 'flex',
     border: '0',
-    color: '#555',
+    color: '#444',
     width: '100%',
     backgroundColor: '#fff',
     transition: 'all 150ms ease 0s',
@@ -112,7 +112,7 @@ const headerStyle = theme => ({
     border: '0',
     padding: '0.625rem 0',
     marginBottom: '20px',
-    color: '#555',
+    color: '#444',
     backgroundColor: '#fff !important'
   }
 })
