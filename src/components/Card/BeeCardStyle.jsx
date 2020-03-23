@@ -24,6 +24,6 @@ const cardStyle = {
   cardCarousel: {
     overflow: 'hidden'
   }
-};
+}
 
-export default cardStyle;
+export default cardStyle

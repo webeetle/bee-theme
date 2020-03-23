@@ -20,6 +20,7 @@ const TextFieldWrapper = ({
   multiline,
   rows,
   uppercase = false,
+  lowercase = false,
   hidden = false,
   id,
   ...propsField
@@ -44,6 +45,10 @@ const TextFieldWrapper = ({
         onChange={(...params) => {
           if (uppercase) {
             params[0].target.value = params[0].target.value.toUpperCase()
+          }
+
+          if (lowercase) {
+            params[0].target.value = params[0].target.value.toLowerCase()
           }
 
           if (onChange) {
@@ -84,6 +89,7 @@ const TextFieldWrapper = ({
 TextFieldWrapper.propTypes = {
   id: PropTypes.string,
   uppercase: PropTypes.bool,
+  lowercase: PropTypes.bool,
   hidden: PropTypes.bool,
   rows: PropTypes.array,
   input: PropTypes.object,

@@ -6,12 +6,14 @@ import {
   dark
 } from '../main-theme'
 
+import primaryHeaderBg from './images/primary-header.png'
+
 const headerStyle = theme => ({
   appBar: {
     display: 'flex',
     border: '0',
     padding: '0.4rem 0',
-    color: '#555',
+    color: '#444',
     width: '100%',
     backgroundColor: '#fff',
     transition: 'all 150ms ease 0s',
@@ -24,7 +26,7 @@ const headerStyle = theme => ({
   appBarDefaultPadding: {
     display: 'flex',
     border: '0',
-    color: '#555',
+    color: '#444',
     width: '100%',
     backgroundColor: '#fff',
     transition: 'all 150ms ease 0s',
@@ -72,6 +74,10 @@ const headerStyle = theme => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText
   },
+  primaryBg: {
+    backgroundImage: `url(${primaryHeaderBg})`,
+    color: '#fff'
+  },
   secondary: {
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.secondary.contrastText
@@ -106,9 +112,9 @@ const headerStyle = theme => ({
     border: '0',
     padding: '0.625rem 0',
     marginBottom: '20px',
-    color: '#555',
+    color: '#444',
     backgroundColor: '#fff !important'
   }
-});
+})
 
-export default headerStyle;
+export default headerStyle

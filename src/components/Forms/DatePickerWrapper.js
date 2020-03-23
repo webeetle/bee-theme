@@ -19,7 +19,7 @@ const DatePickerWrapper = (props) => {
       error={showError}
       inputProps={restInput}
       onChange={onChange}
-      format={'dd-MM-Y'}
+      format='dd-MM-Y'
       value={value === '' ? null : value}
     />
   )

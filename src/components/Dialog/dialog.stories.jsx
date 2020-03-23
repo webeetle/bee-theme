@@ -9,7 +9,26 @@ storiesOf('Dialog', module).add('Default', () => {
   return (
     <BeeDialog
       open={opened}
-      title={'Title'}
+      title='Title'
+      onClose={() => setOpen(false)}
+    >
+      <Typography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
+        facilisis leo vel.
+      </Typography>
+    </BeeDialog>
+  )
+})
+
+storiesOf('Dialog', module).add('Grey', () => {
+  const [opened, setOpen] = useState(true)
+
+  return (
+    <BeeDialog
+      color='grey'
+      open={opened}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -28,7 +47,7 @@ storiesOf('Dialog', module).add('Primary', () => {
     <BeeDialog
       color='primary'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -47,7 +66,7 @@ storiesOf('Dialog', module).add('Secondary', () => {
     <BeeDialog
       color='secondary'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -66,7 +85,7 @@ storiesOf('Dialog', module).add('Warning', () => {
     <BeeDialog
       color='warning'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -85,7 +104,7 @@ storiesOf('Dialog', module).add('Danger', () => {
     <BeeDialog
       color='danger'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -104,7 +123,7 @@ storiesOf('Dialog', module).add('Success', () => {
     <BeeDialog
       color='success'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -123,7 +142,7 @@ storiesOf('Dialog', module).add('Info', () => {
     <BeeDialog
       color='info'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>
@@ -142,7 +161,7 @@ storiesOf('Dialog', module).add('Dark', () => {
     <BeeDialog
       color='dark'
       open={opened}
-      title={'Title'}
+      title='Title'
       onClose={() => setOpen(false)}
     >
       <Typography>

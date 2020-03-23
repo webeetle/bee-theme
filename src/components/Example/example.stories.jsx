@@ -1,100 +1,101 @@
-import React, {useState} from 'react';
-import {storiesOf} from '@storybook/react';
-import BeeDrawer from '../Drawer/BeeDrawer';
-import BeeHeader from "../Header/BeeHeader";
-import BeeButton from "../Button/BeeButton";
-import {ListItem, ListItemIcon, ListItemText, Typography, List, Collapse} from "@material-ui/core";
-import {Send as SendIcon, ExpandLess, ExpandMore, StarBorder, Drafts as  DraftsIcon, Inbox as InboxIcon} from "@material-ui/icons";
-import {makeStyles} from '@material-ui/core/styles';
-import {drawerWidth, drawerWidthCollapsed} from "../main-theme";
+import React, { useState } from 'react'
+import { storiesOf } from '@storybook/react'
+import BeeDrawer from '../Drawer/BeeDrawer'
+import BeeHeader from '../Header/BeeHeader'
+import BeeButton from '../Button/BeeButton'
+import { ListItem, ListItemIcon, ListItemText, Typography, List, Collapse } from '@material-ui/core'
+import { Send as SendIcon, ExpandLess, ExpandMore, StarBorder, Drafts as DraftsIcon, Inbox as InboxIcon } from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core/styles'
+import { drawerWidth, drawerWidthCollapsed } from '../main-theme'
 
 export const Layout = () => {
-  const [collapse, setCollapse] = useState(true);
-  const [open, setOpen] = React.useState(false);
-  
+  const [collapse, setCollapse] = useState(true)
+  const [open, setOpen] = React.useState(false)
+
   const useStyles = makeStyles(theme => ({
     layout: {
-      display: "flex",
-      "& .content": {
+      display: 'flex',
+      '& .content': {
         padding: theme.spacing(3),
         marginTop: 60,
-        flexGrow: 1,
+        flexGrow: 1
       },
 
-      "& .content, & .BeeHeader-root": {
+      '& .content, & .BeeHeader-root': {
         width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
+        marginLeft: drawerWidth
       },
-      "& .BeeDrawer-root-collapsed ~ .content, & .BeeDrawer-root-collapsed ~ .BeeHeader-root": {
+      '& .BeeDrawer-root-collapsed ~ .content, & .BeeDrawer-root-collapsed ~ .BeeHeader-root': {
         width: '100%',
         marginLeft: 0,
         [theme.breakpoints.up('sm')]: {
           width: `calc(100% - ${drawerWidthCollapsed}px)`,
-          marginLeft: drawerWidthCollapsed,
+          marginLeft: drawerWidthCollapsed
         }
-      },
+      }
     }
-  }));
+  }))
 
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.layout}>
       <BeeDrawer
-        open={true}
+        open
         header={
-          collapse ?
-              <Typography variant={"h5"} align={"center"}>W</Typography> :
-              <Typography variant={"h5"} align={"center"}>Webeetle</Typography>
+          collapse
+            ? <Typography variant='h5' align='center'>W</Typography>
+            : <Typography variant='h5' align='center'>Webeetle</Typography>
         }
-        color={"secondary"}
+        color='gradient1'
         collapsed={collapse}
-        anchor={"left"}
-        variant={"persistent"}
+        anchor='left'
+        variant='persistent'
       >
         <List
-          component="nav"
-          aria-labelledby="nested-list-subheader"
+          component='nav'
+          aria-labelledby='nested-list-subheader'
         >
           <ListItem button>
             <ListItemIcon>
               <SendIcon />
             </ListItemIcon>
-            <ListItemText primary="Sent mail" />
+            <ListItemText primary='Sent mail' />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <DraftsIcon />
             </ListItemIcon>
-            <ListItemText primary="Drafts" />
+            <ListItemText primary='Drafts' />
           </ListItem>
-          <ListItem button onClick={() => {setOpen(!open)}}>
+          <ListItem button onClick={() => { setOpen(!open) }}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary='Inbox' />
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
+          <Collapse in={open} timeout='auto' unmountOnExit>
+            <List component='div' disablePadding>
               <ListItem button>
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>
-                <ListItemText primary="Starred" />
+                <ListItemText primary='Starred' />
               </ListItem>
             </List>
           </Collapse>
         </List>
       </BeeDrawer>
 
-      <BeeHeader fixed={true}
-                 color={"primary"}
-                 brand={<Typography variant={"h5"}>Page Title</Typography>}
-                 handleDrawerToggle={() => setCollapse(!collapse)}
-                 rightLinks={<BeeButton size={"small"}>Other Link</BeeButton>}
+      <BeeHeader
+        fixed
+        bgImage
+        brand={<Typography variant='h5'>Page Title</Typography>}
+        handleDrawerToggle={() => setCollapse(!collapse)}
+        rightLinks={<BeeButton size='small'>Other Link</BeeButton>}
       />
 
-      <main className={"content"}>
+      <main className='content'>
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum

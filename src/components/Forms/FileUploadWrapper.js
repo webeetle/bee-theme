@@ -17,7 +17,7 @@ const FileUploadWrapper = (props) => {
   } = props
 
   return (
-    <React.Fragment>
+    <>
       <input
         accept={accept}
         style={{ display: 'none' }}
@@ -41,17 +41,17 @@ const FileUploadWrapper = (props) => {
             propsInputWrapped.onBlur(...params)
           }
         }}
-        type="file"
+        type='file'
       />
       <label htmlFor={id}>
         <Tooltip title={btnText}>
-          <IconButton variant="raised" size={'small'} component="span" >
+          <IconButton variant='raised' size='small' component='span'>
             <Attachment />
           </IconButton>
         </Tooltip>
         {
-          !multiple
-            ? <TextField
+          !multiple ? (
+            <TextField
               style={{ margin: '8px 0px 0px 0px' }}
               error={(meta.error && meta.touched)}
               value={document.getElementById(id) && document.getElementById(id).files[0] && document.getElementById(id).files[0].name ? document.getElementById(id).files[0].name : 'Nessun file selezionato'}
@@ -59,10 +59,10 @@ const FileUploadWrapper = (props) => {
                 readOnly: true,
                 disableUnderline: true
               }}
-            /> : null
+            />) : null
         }
       </label>
-    </React.Fragment>
+    </>
   )
 }
 

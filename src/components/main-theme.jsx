@@ -31,6 +31,10 @@ const dark = {
   main: blueGrey[500],
   textContrast: white[50]
 }
+const grey = {
+  main: white[100],
+  textContrast: '#444'
+}
 
 const disabledButtonContained = {
   backgroundColor: 'rgba(0, 0, 0, .12)',
@@ -40,22 +44,22 @@ const disabledButtonContained = {
 
 const infoBoxShadow = {
   boxShadow:
-    `0 12px 20px -10px ${hexToRgba(info.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(info.main, .2)}`
+    `0 12px 20px -10px ${hexToRgba(info.main, 0.28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(info.main, 0.2)}`
 }
 
 const successBoxShadow = {
   boxShadow:
-    `0 12px 20px -10px ${hexToRgba(success.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(success.main, .2)}`
+    `0 12px 20px -10px ${hexToRgba(success.main, 0.28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(success.main, 0.2)}`
 }
 
 const warningBoxShadow = {
   boxShadow:
-    `0 12px 20px -10px ${hexToRgba(warning.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(warning.main, .2)}`
+    `0 12px 20px -10px ${hexToRgba(warning.main, 0.28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(warning.main, 0.2)}`
 }
 
 const dangerBoxShadow = {
   boxShadow:
-    `0 12px 20px -10px ${hexToRgba(danger.main, .28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(danger.main, .2)}`
+    `0 12px 20px -10px ${hexToRgba(danger.main, 0.28)}, 0 4px 20px 0px rgba(0, 0, 0, .12), 0 7px 8px -5px ${hexToRgba(danger.main, 0.2)}`
 }
 
 const darkBoxShadow = {
@@ -69,6 +73,7 @@ export {
   success,
   warning,
   dark,
+  grey,
   drawerWidth,
   drawerWidthCollapsed,
   headerHeight,

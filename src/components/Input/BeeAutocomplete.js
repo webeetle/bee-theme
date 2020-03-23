@@ -73,7 +73,7 @@ const renderOption = ({ suggestion, index, itemProps, highlightedIndex, selected
       {...itemProps}
       key={suggestion.label}
       selected={isHighlighted}
-      component="div"
+      component='div'
       style={{
         fontWeight: isSelected ? 500 : 400
       }}

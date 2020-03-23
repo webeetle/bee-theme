@@ -1,40 +1,40 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import BeeSnackbar from "./BeeSnackbar";
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import BeeSnackbar from './BeeSnackbar'
 
-storiesOf("Snackbar", module).add("Success", () => {
+storiesOf('Snackbar', module).add('Success', () => {
   return (
     <BeeSnackbar
-      variant={"success"}
-      message={"Operation completed"}
-      onClose={_ => alert("onCloseFunction")}
+      variant='success'
+      message='Operation completed'
+      onClose={_ => console.log('onCloseFunction')}
     />
-  );
-});
+  )
+})
 
-storiesOf("Snackbar", module).add("Info", () => {
+storiesOf('Snackbar', module).add('Info', () => {
   return (
     <BeeSnackbar
-      variant={"info"}
-      message={"Info Message"}
+      variant='info'
+      message='Info Message'
     />
-  );
-});
+  )
+})
 
-storiesOf("Snackbar", module).add("Warning", () => {
+storiesOf('Snackbar', module).add('Warning', () => {
   return (
     <BeeSnackbar
-      variant={"warning"}
-      message={"Warning Message"}
+      variant='warning'
+      message='Warning Message'
     />
-  );
-});
+  )
+})
 
-storiesOf("Snackbar", module).add("Error", () => {
+storiesOf('Snackbar', module).add('Error', () => {
   return (
     <BeeSnackbar
-      variant={"error"}
-      message={"Error Message"}
+      variant='error'
+      message='Error Message'
     />
-  );
-});
+  )
+})

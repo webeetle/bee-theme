@@ -39,9 +39,7 @@ class BeeDrawer extends React.Component {
 
     return (
       <Drawer className={drawerClasses} {...rest}>
-        {header ? <div className={drawerHeadClasses}>
-          {header}
-        </div> : null}
+        {header ? (<div className={drawerHeadClasses}>{header}</div>) : null}
         <div className={drawerBodyClasses}>
           {this.props.children}
         </div>
@@ -63,7 +61,9 @@ BeeDrawer.propTypes = {
     'success',
     'warning',
     'danger',
-    'dark'
+    'dark',
+    'gradient1',
+    'gradient2'
   ]),
   items: PropTypes.array,
   variant: PropTypes.string,

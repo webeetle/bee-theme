@@ -17,7 +17,7 @@ export default ({
   const renderAutocompleteWithoutValue = () => {
     return (
       <Autocomplete
-        key={'autocomplete_without_value'}
+        key='autocomplete_without_value'
         name={name}
         variant={variant}
         label={label}
@@ -45,7 +45,7 @@ export default ({
   const renderAutocompleteWithValue = () => {
     return (
       <Autocomplete
-        key={'autocomplete_with_value'}
+        key='autocomplete_with_value'
         name={name}
         variant={variant}
         label={label}

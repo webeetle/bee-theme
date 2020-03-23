@@ -9,7 +9,8 @@ import {
   SortingState,
   IntegratedFiltering,
   IntegratedSelection,
-  IntegratedSorting, PagingState, IntegratedPaging, CustomPaging
+  IntegratedSorting, PagingState, IntegratedPaging, CustomPaging,
+  FilteringState
 } from '@devexpress/dx-react-grid'
 import {
   Grid,
@@ -18,7 +19,9 @@ import {
   SearchPanel,
   TableSelection,
   TableHeaderRow,
-  PagingPanel
+  PagingPanel,
+  TableColumnResizing,
+  VirtualTable
 } from '@devexpress/dx-react-grid-material-ui'
 
 class BeeGrid extends React.Component {
@@ -36,7 +39,11 @@ class BeeGrid extends React.Component {
       paging,
       table,
       tableHeaderRow,
+      defaultColumnWidths,
+      showColumnResizing,
       providers = [],
+      filters,
+      height,
       ...rest
     } = this.props
 
@@ -46,15 +53,14 @@ class BeeGrid extends React.Component {
     })
 
     return (
-      <React.Fragment>
-        {loading && <LinearProgress/>}
+      <>
+        {loading && <LinearProgress />}
         <Grid
           rows={rows}
           columns={columns}
           className={GridClasses}
           {...rest}
         >
-
           {providers.length > 0
             ? providers.map((provider) => (
               <DataTypeProvider
@@ -62,43 +68,54 @@ class BeeGrid extends React.Component {
                 {...provider}
               />
             )
-            ) : null
-          }
+            ) : null}
 
           <SelectionState {...selection} />
           <SearchState {...search} />
           <SortingState {...sorting} />
           <PagingState {...paging} />
 
-          {search && !search.onValueChange ? <IntegratedFiltering/> : null}
-          {selection && selection.showSelectAll ? <IntegratedSelection/> : null}
-          {sorting && !sorting.onSortingChange ? <IntegratedSorting/> : null}
-          {paging && !paging.onCurrentPageChange ? <IntegratedPaging/> : <CustomPaging {...paging} />}
+          {filters ? <FilteringState filters={filters} /> : null}
+          {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering columnExtensions={filters} /> : null}
+          {selection && selection.showSelectAll ? <IntegratedSelection /> : null}
+          {sorting && !sorting.onSortingChange ? <IntegratedSorting /> : null}
+          {paging && !paging.onCurrentPageChange ? <IntegratedPaging /> : <CustomPaging {...paging} />}
 
           <Table
             {...table}
           />
+          {(showColumnResizing && defaultColumnWidths.length > 0) ? <TableColumnResizing defaultColumnWidths={defaultColumnWidths} /> : null}
+          {height ? <VirtualTable height={height} /> : null }
           <TableHeaderRow
             showSortingControls={sorting && sorting.showSortingControls}
             {...tableHeaderRow}
           />
 
-          {(search || toolbar) && <Toolbar/>}
-          {search && <SearchPanel/>}
+          {(search || toolbar) && <Toolbar />}
+          {search && <SearchPanel />}
           {selection && <TableSelection {...selection} />}
           {paging && <PagingPanel {...paging} />}
 
         </Grid>
-      </React.Fragment>
+      </>
     )
   }
 }
 
+BeeGrid.defaultProps = {
+  showColumnResizing: false,
+  defaultColumnWidths: []
+}
+
 BeeGrid.propTypes = {
+  height: PropTypes.number,
   classes: PropTypes.object,
   rows: PropTypes.array,
   columns: PropTypes.array,
   providers: PropTypes.array,
+  filters: PropTypes.array,
+  showColumnResizing: PropTypes.bool,
+  defaultColumnWidths: PropTypes.array,
   loading: PropTypes.bool,
   search: PropTypes.object,
   toolbar: PropTypes.any,

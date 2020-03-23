@@ -28,9 +28,9 @@ class BeeSimpleHeader extends React.Component {
 
     return (
       <AppBar className={appBarClasses} elevation={elevation}>
-        <Toolbar className={classes.container} variant="dense">
+        <Toolbar className={classes.container} variant='dense'>
           {brand ? (
-            <Typography color="inherit" align="left" variant="subtitle1">{brand}</Typography>
+            <Typography color='inherit' align='left' variant='subtitle1'>{brand}</Typography>
           ) : null}
           {children}
         </Toolbar>

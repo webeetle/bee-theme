@@ -7,14 +7,15 @@ import clsx from 'clsx'
 
 class BeeCheckbox extends React.Component {
   render () {
-    const { classes, color, rest } = this.props
+    const { classes, color, ...rest } = this.props
     const checkboxClasses = clsx(classes[color])
 
     return (
       <Checkbox
-        color="primary"
+        color='primary'
         {...rest}
-        className={checkboxClasses} />
+        className={checkboxClasses}
+      />
     )
   }
 }

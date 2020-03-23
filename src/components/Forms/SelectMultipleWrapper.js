@@ -74,7 +74,7 @@ const SelectMultipleWrapper = (props) => {
         native={native}
         name={name}
         disabled={disabled}
-        input={<Input id="select-multiple-checkbox" />}
+        input={<Input id='select-multiple-checkbox' />}
         renderValue={selected => (
           <div>
             {selected.map(value => (
@@ -98,7 +98,7 @@ const SelectMultipleWrapper = (props) => {
           }) : renderSelectedOption(value, value, native)
         }
       </Select>
-      {meta.error && meta.touched ? (<FormHelperText>{meta.error}</FormHelperText>) : <React.Fragment />}
+      {meta.error && meta.touched ? (<FormHelperText>{meta.error}</FormHelperText>) : <></>}
     </FormControl>
   )
 }

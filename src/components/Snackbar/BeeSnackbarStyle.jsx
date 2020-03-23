@@ -3,7 +3,7 @@ import {
   danger,
   success,
   info
-} from './../main-theme';
+} from './../main-theme'
 
 const styles = theme => ({
   success: {
@@ -28,12 +28,12 @@ const styles = theme => ({
   },
   iconVariant: {
     opacity: 0.9,
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(1)
   },
   message: {
     display: 'flex',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 })
 
 export default styles
