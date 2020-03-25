@@ -32,7 +32,7 @@ const dark = {
   textContrast: white[50]
 }
 const grey = {
-  main: white[100],
+  main: '#f9f9fc',
   textContrast: '#444'
 }
 
