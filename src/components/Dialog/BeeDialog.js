@@ -78,7 +78,7 @@ BeeDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   title: PropTypes.any,
   toolbarBtns: PropTypes.node,
-  maxWidth: PropTypes.number,
+  maxWidth: PropTypes.string,
   children: PropTypes.node,
   styleContent: PropTypes.object,
   onClose: PropTypes.func,
