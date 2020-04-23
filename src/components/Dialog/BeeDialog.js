@@ -87,7 +87,7 @@ BeeDialog.propTypes = {
   disableEscapeKeyDown: PropTypes.bool,
   className: PropTypes.string,
   classes: PropTypes.any,
-  color: PropTypes.oneOf(['default', 'info', 'warning', 'success', 'danger', 'dark'])
+  color: PropTypes.oneOf(['default', 'info', 'warning', 'success', 'danger', 'dark', 'grey'])
 }
 
 export default withStyles(BeeDialogStyle)(BeeDialog)
