@@ -63,7 +63,7 @@ function BeeDialog (props) {
         {children}
       </DialogContent>
 
-      <DialogActions>
+      <DialogActions className={classes.actions}>
         <Tools toolbarBtns={toolbarBtns} />
       </DialogActions>
     </Dialog>
