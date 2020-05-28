@@ -78,7 +78,7 @@ BeeDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   title: PropTypes.any,
   toolbarBtns: PropTypes.node,
-  maxWidth: PropTypes.number,
+  maxWidth: PropTypes.string,
   children: PropTypes.node,
   styleContent: PropTypes.object,
   onClose: PropTypes.func,
@@ -87,7 +87,7 @@ BeeDialog.propTypes = {
   disableEscapeKeyDown: PropTypes.bool,
   className: PropTypes.string,
   classes: PropTypes.any,
-  color: PropTypes.oneOf(['default', 'info', 'warning', 'success', 'danger', 'dark'])
+  color: PropTypes.oneOf(['default', 'info', 'warning', 'success', 'danger', 'dark', 'grey'])
 }
 
 export default withStyles(BeeDialogStyle)(BeeDialog)

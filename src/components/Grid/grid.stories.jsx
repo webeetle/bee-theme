@@ -197,6 +197,7 @@ export const Paging = () => {
     <div>
       <Typography variant='h5'>Local paging</Typography>
       <BeeGrid
+        height={200}
         columns={columns}
         rows={rows}
         paging={{

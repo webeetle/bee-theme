@@ -20,7 +20,8 @@ import {
   TableSelection,
   TableHeaderRow,
   PagingPanel,
-  TableColumnResizing
+  TableColumnResizing,
+  VirtualTable
 } from '@devexpress/dx-react-grid-material-ui'
 
 class BeeGrid extends React.Component {
@@ -42,6 +43,7 @@ class BeeGrid extends React.Component {
       showColumnResizing,
       providers = [],
       filters,
+      height,
       ...rest
     } = this.props
 
@@ -83,6 +85,7 @@ class BeeGrid extends React.Component {
             {...table}
           />
           {(showColumnResizing && defaultColumnWidths.length > 0) ? <TableColumnResizing defaultColumnWidths={defaultColumnWidths} /> : null}
+          {height ? <VirtualTable height={height} /> : null }
           <TableHeaderRow
             showSortingControls={sorting && sorting.showSortingControls}
             {...tableHeaderRow}
@@ -105,6 +108,7 @@ BeeGrid.defaultProps = {
 }
 
 BeeGrid.propTypes = {
+  height: PropTypes.number,
   classes: PropTypes.object,
   rows: PropTypes.array,
   columns: PropTypes.array,
