@@ -11,11 +11,7 @@ import { darken } from '@material-ui/core/styles'
 const styles = theme => ({
   root: {
     margin: 0,
-    padding: theme.spacing(2),
-    backgroundColor: '#EFEFF5'
-  },
-  actions: {
-    backgroundColor: '#EFEFF5'
+    padding: theme.spacing(2)
   },
   closeButton: {
     position: 'absolute',
