@@ -14,7 +14,9 @@ import {
   SearchState,
   SelectionState,
   SortingState,
-  RowDetailState
+  RowDetailState,
+  IntegratedGrouping,
+  GroupingState
 } from '@devexpress/dx-react-grid'
 import {
   Grid,
@@ -26,7 +28,8 @@ import {
   TableRowDetail,
   TableSelection,
   Toolbar,
-  VirtualTable
+  VirtualTable,
+  TableGroupRow
 } from '@devexpress/dx-react-grid-material-ui'
 
 class BeeGrid extends React.Component {
@@ -49,6 +52,7 @@ class BeeGrid extends React.Component {
       providers = [],
       filters,
       height,
+      groupBy,
       rowDetail,
       ...rest
     } = this.props
@@ -57,6 +61,8 @@ class BeeGrid extends React.Component {
       'BeeGrid-root': true,
       [className]: className
     })
+
+    console.log(groupBy)
 
     return (
       <>
@@ -79,9 +85,17 @@ class BeeGrid extends React.Component {
           <SelectionState {...selection} />
           <SearchState {...search} />
           <SortingState {...sorting} />
+
+          {groupBy && groupBy.defaultGrouping && <GroupingState
+            defaultGrouping={groupBy.defaultGrouping}
+          />}
+
+          {groupBy && <IntegratedGrouping />}
+
           <PagingState {...paging} />
 
           {filters ? <FilteringState filters={filters}/> : null}
+
           {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering columnExtensions={filters}/> : null}
           {selection && selection.showSelectAll ? <IntegratedSelection/> : null}
           {sorting && !sorting.onSortingChange ? <IntegratedSorting/> : null}
@@ -106,11 +120,11 @@ class BeeGrid extends React.Component {
             contentComponent={(el) => rowDetail.callback(el)}
           />}
 
+          {groupBy && <TableGroupRow />}
           {(search || toolbar) && <Toolbar/>}
           {search && <SearchPanel/>}
           {selection && <TableSelection {...selection} />}
           {paging && <PagingPanel {...paging} />}
-
         </Grid>
       </>
     )
@@ -129,6 +143,7 @@ BeeGrid.propTypes = {
   columns: PropTypes.array,
   providers: PropTypes.array,
   filters: PropTypes.array,
+  groupBy: PropTypes.object,
   showColumnResizing: PropTypes.bool,
   defaultColumnWidths: PropTypes.array,
   loading: PropTypes.bool,
