@@ -272,8 +272,6 @@ export const Detail = () => {
     { name: 'Nunzia', gender: 'Female', city: 'Nocera Inferiore', car: 'BMW Serie 1' }
   ])
 
-  const [pageSizes] = useState([5, 10, 15, 0])
-
   return (
     <div>
       <Typography variant='h5'>Detail Row</Typography>
