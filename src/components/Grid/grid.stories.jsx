@@ -249,9 +249,58 @@ export const Paging = () => {
   )
 }
 
+export const Detail = () => {
+  const [columns] = useState([
+    { name: 'name', title: 'Name' },
+    { name: 'gender', title: 'Gender' },
+    { name: 'city', title: 'City' },
+    { name: 'car', title: 'Car' }
+  ])
+  const [rows] = useState([
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Nunzia', gender: 'Female', city: 'Nocera Inferiore', car: 'BMW Serie 1' }
+  ])
+
+  const [pageSizes] = useState([5, 10, 15, 0])
+
+  return (
+    <div>
+      <Typography variant='h5'>Detail Row</Typography>
+      <BeeGrid
+        columns={columns}
+        rows={rows}
+        rowDetail={{
+          defaultExpanded: [3,6],
+          callback: ({row}) => <div style={{margin: 30, padding: 50, background:'#fff'}}>
+            Details for
+            {' '}
+            {row.name}
+            {' '}
+            from
+            {' '}
+            {row.city}
+          </div>
+        }}
+      />
+    </div>
+  )
+}
+
 storiesOf('Grid', Standard)
   .add('Basic', Standard)
   .add('Search', Search)
   .add('Selection', Selection)
   .add('Sorting', Sorting)
   .add('Paging', Paging)
+  .add('Detail', Detail)
