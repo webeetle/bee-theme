@@ -86,8 +86,8 @@ class BeeGrid extends React.Component {
           <SearchState {...search} />
           <SortingState {...sorting} />
 
-          {groupBy && groupBy.defaultGrouping && <GroupingState
-            defaultGrouping={groupBy.defaultGrouping}
+          {groupBy && <GroupingState
+            {...groupBy}
           />}
 
           {groupBy && <IntegratedGrouping />}
