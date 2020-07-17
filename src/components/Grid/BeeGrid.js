@@ -62,8 +62,6 @@ class BeeGrid extends React.Component {
       [className]: className
     })
 
-    console.log(groupBy)
-
     return (
       <>
         {loading && <LinearProgress/>}
@@ -120,10 +118,10 @@ class BeeGrid extends React.Component {
             contentComponent={(el) => rowDetail.callback(el)}
           />}
 
-          {groupBy && <TableGroupRow />}
           {(search || toolbar) && <Toolbar/>}
           {search && <SearchPanel/>}
           {selection && <TableSelection {...selection} />}
+          {groupBy && <TableGroupRow />}
           {paging && <PagingPanel {...paging} />}
         </Grid>
       </>

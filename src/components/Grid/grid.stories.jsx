@@ -295,6 +295,35 @@ export const Detail = () => {
   )
 }
 
+export const Grouping = () => {
+  const [columns] = useState([
+    { name: 'name', title: 'Name' },
+    { name: 'gender', title: 'Gender' },
+    { name: 'city', title: 'City' },
+    { name: 'car', title: 'Car' }
+  ])
+  const [rows] = useState([
+    { name: 'Marco', gender: 'Male', city: 'Angri', car: 'Hyundai 10' },
+    { name: 'Gennaro', gender: 'Male', city: 'Pagani', car: 'Panda 2008' },
+    { name: 'Nunzia', gender: 'Female', city: 'Nocera Inferiore', car: 'BMW Serie 1' }
+  ])
+
+  const [grouping] = useState([{ columnName: 'gender' }])
+
+  return (
+    <div>
+      <Typography variant='h5'>Local Grouping</Typography>
+      <BeeGrid
+        columns={columns}
+        rows={rows}
+        groupBy={{
+          defaultGrouping: grouping
+        }}
+      />
+    </div>
+  )
+}
+
 storiesOf('Grid', Standard)
   .add('Basic', Standard)
   .add('Search', Search)
@@ -302,3 +331,4 @@ storiesOf('Grid', Standard)
   .add('Sorting', Sorting)
   .add('Paging', Paging)
   .add('Detail', Detail)
+  .add('Grouping', Grouping)
