@@ -28,7 +28,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-draggable": "^4.2.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "test": "npm run lint",
@@ -64,10 +64,10 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addon-viewport": "^5.2.8",
     "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/react": "^9.1.1",
     "@storybook/storybook-deployer": "^2.8.1",
     "babel-loader": "^8.0.6",
-    "eslint": "^6.7.2",
+    "eslint": "^9.32.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-node": "^11.0.0",
